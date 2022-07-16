@@ -1,4 +1,4 @@
-# mixjuice-chat-app "Mixchat!"
+# MixJuice専用チャットアプリ "Mixchat!"
 https://mixjuice-chat.herokuapp.com/
 
 GETメソッドのパラメータmsgにメッセージを代入しリクエストを送るとブラウザに表示されます。
