@@ -1,7 +1,7 @@
-# mixjuice-chat-app
+# mixjuice-chat-app "Mixchat!"
 https://mixjuice-chat.herokuapp.com/
 
-## GETメソッドのパラメータmsgにメッセージを代入しリクエストを送るとブラウザに表示されます。
+GETメソッドのパラメータmsgにメッセージを代入しリクエストを送るとブラウザに表示されます。
 
 ## 例)ブラウザの場合
 https://mixjuice-chat.herokuapp.com/?msg=メッセージ
