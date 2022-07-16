@@ -13,8 +13,7 @@
         line-height: 1.3em;
         letter-spacing: 0px;
         font-size: 85%;
-        width: 590px;
-        word-break: break-all;
+        word-break: break-all; 
         x-overflow: scroll;
     }
 

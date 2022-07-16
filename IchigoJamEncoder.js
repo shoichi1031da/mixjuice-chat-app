@@ -79,11 +79,11 @@ const IchigoJamEncoder = (resMsg,msgLength) => {
         //半濁点の処理
         if(d[i+1] == "ß")d[i] = d[i] + "ß";
 
-        //アルファベットや数字の時はエンコードせず連結
-        if(encodeURI(d[i]).substr(0,1) !== "%"){
+        //アルファベットや数字の時 または ひらがな漢字の時はエンコードせず連結
+        if(encodeURI(d[i]).substr(0,1) !== "%" || encodeURI(d[i]).substr(0,2) == "%E"){
             encodedMsg = encodedMsg + d[i];
             continue;
-        } 
+        }
 
         //katakanaTableオブジェクトのプロパティと一致するまで繰り返し（検索）
         let j=0;
