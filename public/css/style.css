@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'ichigojam';
+    src: url('font/IchigoJam-1.4.woff') format('woff');
+}
+    
+    .ichigojam{
+        color: white;
+        background: black;
+        font-family: "ichigojam";
+        padding: 0.2rem 0.5rem;
+    }
+
+#messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#messages > li {
+    padding: 0.5rem 1rem;
+}
+
+#messages > li:nth-child(odd) {
+    background: rgb(220, 253, 171);
+} 
+  
