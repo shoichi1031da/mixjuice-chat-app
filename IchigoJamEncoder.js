@@ -80,7 +80,7 @@ const IchigoJamEncoder = (resMsg,msgLength) => {
         if(d[i+1] == "ß")d[i] = d[i] + "ß";
 
         //アルファベットや数字の時 または ひらがな漢字の時はエンコードせず連結
-        if(encodeURI(d[i]).substr(0,1) !== "%" || encodeURI(d[i]).substr(0,2) == "%E"){
+        if(encodeURI(d[i]).substr(0,2) != "%C"){
             encodedMsg = encodedMsg + d[i];
             continue;
         }
