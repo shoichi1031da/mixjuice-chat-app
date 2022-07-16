@@ -10,4 +10,4 @@ https://mixjuice-chat.herokuapp.com/?msg=メッセージ
 ### ?"MJ GETS mixjuice-chat.herokuapp.com/?msg=メッセージ"
 
 MixJuice側でGETリクエストを強制終了させたい場合はredirectパラメータを追記しましょう。
-?"MJ GETS mixjuice-chat.herokuapp.com/?redirect=on&msg=メッセージ"
+### ?"MJ GETS mixjuice-chat.herokuapp.com/?redirect=on&msg=メッセージ"
