@@ -46,6 +46,10 @@ app.get("/" ,(req,res) => {
     res.sendFile(__dirname + "/index.html");
 });
 
+app.get("" ,(req,res) => {
+    res.sendFile(__dirname + "/index.html");
+})
+
 //WebSocketの接続
 io.on("connection", (socket) => {
     console.log("ユーザーが接続しました");
