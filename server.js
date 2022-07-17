@@ -40,10 +40,10 @@ app.get("/",(req,res) => {
         
         if(cliantType.substr(0,8) == "MixJuice" || cliantType.substr(0,7) == "Mozilla"){
             io.emit("chat message", sendMsg);
+            app.set("sendMsg",sendMsg);
             console.log(" ブラウザ表示:" + sendMsg);
         }else{
             app.set("sendMsg",recMsg);
-            console.log(app.get("sendMsg"));
         }
     }
 

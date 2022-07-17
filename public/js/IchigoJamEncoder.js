@@ -1,6 +1,6 @@
 
 const IchigoJamEncoderTable = {
-    katakana:[
+    sendStr:[
         "ア","イ","ウ","エ","オ",
         "カ","キ","ク","ケ","コ",
         "サ","シ","ス","セ","ソ",
@@ -30,7 +30,7 @@ const IchigoJamEncoderTable = {
         "/","/","▘","▝","▀","▖","▌","▞","▛","▗","▚","▐","▜","▄","▙","▟","█","・","━","┃","╋","┫","┣","┻","┳","┏","┓","┗","┛","◤","◥","◣","◢"
     ],
     
-    strings:[
+    recieveStr:[
         "±","²","³","´","µ",
         "¶","·","¸","¹","º",
         "»","¼","½","¾","¿",
@@ -44,7 +44,7 @@ const IchigoJamEncoderTable = {
 
         "§","¨","©","ª","«",
         "¯",
-        "¬","%C2%AD","%C2%AE", //なぜか小文字のユヨだけ読み取れない
+        "¬","%C2%AD","%C2%AE", //なぜか小文字のユヨだけ読み取れないのでユニコード
         "¤","¡","°","¢","£",
 
         "¶Þ","·Þ","¸Þ","¹Þ","ºÞ", 
@@ -57,21 +57,9 @@ const IchigoJamEncoderTable = {
         "à","á","â","ã","ä","å","æ","ç","è","é","ê","ë","ì","í","î","ï",
         "ð","ñ","ò","ó","ô","õ","ö","÷","ø","ù","ú","û","ü","ý","þ","ÿ",
 
-        // "Â","Â","Â","Â","Â","Â","Â","Â","Â","Â","Â","Â",
-        // "Â","Â","Â","Â","Â","Â","Â","Â","Â","Â","Â",
-        // "Â","Â","Â","Â","Â","Â","Â","Â"
         "%C2%81","%C2%82","%C2%83","%C2%84","%C2%85","%C2%86","%C2%87","%C2%88","%C2%89","%C2%8A","%C2%8B","%C2%8C","%C2%8D","%C2%8E","%C2%8F","%C2%90","%C2%91","%C2%92","%C2%93","%C2%94","%C2%95","%C2%96","%C2%97","%C2%98","%C2%99","%C2%9A","%C2%9B","%C2%9C","%C2%9D","%C2%9E","%C2%9F"
-        
     ],
 }
-
-//小文字のユヨ変換用関数
-// const yuyo = (uri) => {
-//     let d = uri;
-//     if(uri == "%C2%AD") d = "ュ";
-//     else d = "ョ";
-//     return d;
-// }
 
 const IchigoJamEncoder = (resMsg,msgLength) => {
     let encodedMsg = "";
@@ -99,24 +87,12 @@ const IchigoJamEncoder = (resMsg,msgLength) => {
             continue;
         }
 
-        //IchigoJamEncoderTableオブジェクトのプロパティと一致するまで繰り返し（検索）
-        
-        for(const j in IchigoJamEncoderTable.katakana){
-            let uri = encodeURI(d[i]);
-            if(d[i] == IchigoJamEncoderTable.strings[j] || uri == IchigoJamEncoderTable.strings[j]){
-                encodedMsg = encodedMsg + IchigoJamEncoderTable.katakana[j];
+        //IchigoJamEncoderTableオブジェクトを参照しエンコード
+        for(const j in IchigoJamEncoderTable.sendStr){
+            if(d[i] == IchigoJamEncoderTable.recieveStr[j] || encodeURI(d[i]) == IchigoJamEncoderTable.recieveStr[j]){
+                encodedMsg = encodedMsg + IchigoJamEncoderTable.sendStr[j];
             } 
-                
-        }
-
-            //なぜか小文字のユとヨのエンコード前の文字だけ読み取れないので、ユニコードで処理
-            
-            // if(uri == "%C2%AD" || uri == "%C2%AE"){
-            //     IchigoJamEncoderTable.katakana[j] = yuyo(uri);
-            //     break;
-            // }
-            
-        
+        }            
     
     } return encodedMsg;
 
