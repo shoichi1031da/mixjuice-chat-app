@@ -6,6 +6,8 @@ const http = require("http");
 const { receiveMessageOnPort } = require("worker_threads");
 const server = http.createServer(app);
 const io = require("socket.io")(server);
+const cors = require('cors');
+app.use(cors());
 
 const PORT = process.env.PORT || 3000;
 const IchigoJamEncoder = require("./public/js/IchigoJamEncoder");
