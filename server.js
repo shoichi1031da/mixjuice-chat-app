@@ -11,7 +11,7 @@ const cors = require('cors');
 app.use(cors());
 const corsOption = {
     origin: [
-      "http://https://fukuno.jig.jp "
+      "https://fukuno.jig.jp "
     ],
     credentials: true,
   };
