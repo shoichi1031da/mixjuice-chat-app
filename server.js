@@ -62,7 +62,7 @@ io.on("connection", (socket) => {
         io.emit("chat message",sendMsg);
         console.log(" ブラウザ表示:" + sendMsg);
     }
-    
+    app.set("sendMsg","");
 });
 
 server.listen(PORT, () => {
