@@ -5,17 +5,15 @@ const fs = require('fs');
 const http = require("http");
 const { receiveMessageOnPort } = require("worker_threads");
 const server = http.createServer(app);
+const io = require("socket.io")(server);
 
-const { Server } = require('socket.io');
-const io = new Server(server)
-
-const IchigoJamEncoder = require("./IchigoJamEncoder");
 const PORT = process.env.PORT || 3000;
+const IchigoJamEncoder = require("./public/js/IchigoJamEncoder");
 
 //publicディレクトリ内のファイルをロードできるようになる
 app.use(express.static('public'));
 
-app.get("/" ,(req,res) => {
+app.get("/mj-chat",(req,res) => {
     let cliantType = req.headers["user-agent"];
         console.log("\n クライアントタイプ:" + cliantType);
     let recMsg = req.query.msg;
@@ -25,7 +23,6 @@ app.get("/" ,(req,res) => {
 
     //パラメータで受け取った文字列をエンコード
     if(recMsg){
-        
         let msgLength = recMsg.length;
         let sendMsg = IchigoJamEncoder(recMsg,msgLength);
         
@@ -46,7 +43,7 @@ app.get("/" ,(req,res) => {
     res.sendFile(__dirname + "/index.html");
 });
 
-app.get("" ,(req,res) => {
+app.get("/" ,(req,res) => {
     res.sendFile(__dirname + "/index.html");
 })
 
@@ -61,9 +58,8 @@ io.on("connection", (socket) => {
     
 });
 
-
 server.listen(PORT, () =>{
-    console.log("listening on 80");
+    console.log("listening");
 });
 
 

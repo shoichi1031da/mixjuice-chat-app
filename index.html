@@ -8,27 +8,17 @@
 </head>
 
 <body>
-    <img src="/img/mixchat.png" alt="title"width="240" height="70" loading="lazy">
+    <img src="/img/mixchat.png" class="image" alt="title"width="240" height="70" loading="lazy">
     <h3 class="ichigojam">?"MJ GETS mixjuice-chat.herokuapp.com/?msg=メッセージ"</h3>
-    <p>※パラメータに <span class="ichigojam">&redirect=on</span> を追加すると、MixJuice側でリダイレクトエラー(302)を起こさせ、GETメソッドのレスポンスを拒否できます。</p>
+    <p class="note">※パラメータに <span class="ichigojam">&redirect=on</span> を追加すると、MixJuice側でリダイレクトエラー(302)を起こさせ、GETメソッドのレスポンスを拒否できます。</p>
+    <p class="note">ソースコード : <a href="https://github.com/shoichi1031da/mixjuice-chat-app">https://github.com/shoichi1031da/mixjuice-chat-app</a></p>
+    <div id="container" class='container'>
     <ul id="messages"></ul>
+    </div>
 
     <script src="/socket.io/socket.io.js"></script>
-
-    <script>
-        let socket = io();
-
-        //全クライアントのブラウザに表示
-        socket.on("chat message", function(msg){
-            let item = document.createElement("li");
-            item.textContent = msg;
-            messages.appendChild(item);
-
-            // const messeages = document.getElementById( "messeages" );
-            // messeages.scrollTop = messeages.scrollHeight;
-        });
-
     
-    </script>
+    <script type="module" src="js/index.js"></script>
+
 </body>
 </html>
