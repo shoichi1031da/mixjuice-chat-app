@@ -38,7 +38,7 @@ app.get("/",(req,res) => {
         let msgLength = recMsg.length;
         let sendMsg = IchigoJamEncoder(recMsg,msgLength);
         
-        if(cliantType.substr(0,8) == "MixJuice"){
+        if(cliantType.substr(0,8) == "MixJuice" || cliantType.substr(0,7) == "Mozilla"){
             io.emit("chat message", sendMsg);
             console.log(" ブラウザ表示:" + sendMsg);
         }else{
