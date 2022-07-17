@@ -1,7 +1,7 @@
 
 @font-face {
     font-family: 'ichigojam';
-    src: url('font/IchigoJam-1.4.woff') format('woff');
+    src: url('../font/IchigoJam-1.4.woff') format('woff');
 }
     
     .ichigojam{
@@ -21,6 +21,7 @@
 .image{
     padding: .5em 0em 0em 0em;
     margin: 100px,0,0,0;
+    
 }
 
 .container {
