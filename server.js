@@ -13,7 +13,7 @@ const IchigoJamEncoder = require("./public/js/IchigoJamEncoder");
 //publicディレクトリ内のファイルをロードできるようになる
 app.use(express.static('public'));
 
-app.get("/mj-chat",(req,res) => {
+app.get("/",(req,res) => {
     let cliantType = req.headers["user-agent"];
         console.log("\n クライアントタイプ:" + cliantType);
     let recMsg = req.query.msg;
@@ -43,7 +43,7 @@ app.get("/mj-chat",(req,res) => {
     res.sendFile(__dirname + "/index.html");
 });
 
-app.get("/" ,(req,res) => {
+app.get("" ,(req,res) => {
     res.sendFile(__dirname + "/index.html");
 })
 
@@ -58,8 +58,8 @@ io.on("connection", (socket) => {
     
 });
 
-server.listen(PORT, () =>{
-    console.log("listening");
+server.listen(PORT, () => {
+    console.log(PORT + "listening");
 });
 
 

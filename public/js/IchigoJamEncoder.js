@@ -1,5 +1,5 @@
 
-const katakanaTable = {
+const IchigoJamEncoderTable = {
     katakana:[
         "ア","イ","ウ","エ","オ",
         "カ","キ","ク","ケ","コ",
@@ -22,7 +22,6 @@ const katakanaTable = {
         "ダ","ヂ","ヅ","デ","ド",
         "バ","ビ","ブ","ベ","ボ",
         "パ","ピ","プ","ペ","ポ"
-    
     ],
     
     strings:[
@@ -39,7 +38,7 @@ const katakanaTable = {
 
         "§","¨","©","ª","«",
         "¯",
-        "¬","","­", //小文字のユヨだけ読み取れない
+        "¬","","­", //なぜか小文字のユヨだけ読み取れない
         "¤","¡","°","¢","£",
 
         "¶Þ","·Þ","¸Þ","¹Þ","ºÞ", 
@@ -50,14 +49,13 @@ const katakanaTable = {
     ],
 }
 
-//小文字のユヨ変換関数
+//小文字のユヨ変換用関数
 const yuyo = (uri) => {
     let d = uri;
     if(uri == "%C2%AD") d = "ュ";
     else d = "ョ";
     return d;
 }
-
 
 const IchigoJamEncoder = (resMsg,msgLength) => {
     let encodedMsg = "";
@@ -71,13 +69,13 @@ const IchigoJamEncoder = (resMsg,msgLength) => {
     for(let i=0;i<msgLength;i++){
 
         //濁点、半濁点の時はスキップ
-        if(d[i] == "Þ" || d[i] == "ß")continue;
+        if(d[i] == "Þ" || d[i] == "ß") continue;
 
         //濁点の処理
-        if(d[i+1] == "Þ")d[i] = d[i] + "Þ";
+        if(d[i+1] == "Þ") d[i] = d[i] + "Þ";
 
         //半濁点の処理
-        if(d[i+1] == "ß")d[i] = d[i] + "ß";
+        if(d[i+1] == "ß") d[i] = d[i] + "ß";
 
         //アルファベットや数字、ひらがな、漢字の時はエンコードせず連結
         if(encodeURI(d[i]).substr(0,2) != "%C"){
@@ -85,25 +83,24 @@ const IchigoJamEncoder = (resMsg,msgLength) => {
             continue;
         }
 
-        //katakanaTableオブジェクトのプロパティと一致するまで繰り返し（検索）
-        let j=0;
-        while(d[i] !== katakanaTable.strings[j]){
+        //IchigoJamEncoderTableオブジェクトのプロパティと一致するまで繰り返し（検索）
+        let j = 0;
+        while(d[i] !== IchigoJamEncoderTable.strings[j]){
 
             //なぜか小文字のユとヨのエンコード前の文字だけ読み取れないので、ユニコードで処理
             let uri = encodeURI(d[i]);
             if(uri == "%C2%AD" || uri == "%C2%AE"){
-                katakanaTable.katakana[j] = yuyo(uri);
+                IchigoJamEncoderTable.katakana[j] = yuyo(uri);
                 break;
             }
             j++;
             
         }
 
-        encodedMsg = encodedMsg + katakanaTable.katakana[j];
+        encodedMsg = encodedMsg + IchigoJamEncoderTable.katakana[j];
     
     } return encodedMsg;
 }
-    
-
+ 
 module.exports = IchigoJamEncoder;
 
