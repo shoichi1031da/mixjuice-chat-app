@@ -2,6 +2,7 @@
 https://mixjuice-chat.herokuapp.com/
 
 GETメソッドのパラメータmsgにメッセージを代入しリクエストを送るとブラウザに表示されます。
+IchigoJamのカタカナも対応しているので送信できます。
 
 ## 例)ブラウザの場合
 https://mixjuice-chat.herokuapp.com/?msg=メッセージ
