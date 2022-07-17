@@ -116,7 +116,7 @@ const IchigoJamEncoder = (resMsg,msgLength) => {
             //     break;
             // }
             
-        encodedMsg = encodedMsg + IchigoJamEncoderTable.katakana[j];
+        
     
     } return encodedMsg;
 
