@@ -25,6 +25,7 @@ const IchigoJamEncoder = require("./public/js/IchigoJamEncoder");
 app.use(express.static('public'));
 
 app.get("/",(req,res) => {
+    app.set("sendMsg","");
     let cliantType = req.headers["user-agent"];
         console.log("\n クライアントタイプ:" + cliantType);
     let recMsg = req.query.msg;
@@ -62,7 +63,6 @@ io.on("connection", (socket) => {
         io.emit("chat message",sendMsg);
         console.log(" ブラウザ表示:" + sendMsg);
     }
-    app.set("sendMsg","");
 });
 
 server.listen(PORT, () => {
