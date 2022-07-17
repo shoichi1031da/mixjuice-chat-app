@@ -103,7 +103,7 @@ const IchigoJamEncoder = (resMsg,msgLength) => {
         
         for(const j in IchigoJamEncoderTable.katakana){
             let uri = encodeURI(d[i]);
-            if(d[i] == IchigoJamEncoderTable.strings[j] || uri == chigoJamEncoderTable.strings[j]){
+            if(d[i] == IchigoJamEncoderTable.strings[j] || uri == IchigoJamEncoderTable.strings[j]){
                 encodedMsg = encodedMsg + IchigoJamEncoderTable.katakana[j];
             } 
                 
