@@ -15,7 +15,7 @@ const IchigoJamEncoderTable = {
 
         "§","¨","©","ª","«",
         "¯",
-        "¬","%C2%AD","%C2%AE", //なぜか小文字のユヨだけ読み取れないのでユニコードで対応
+        "¬","%C2%AD","%C2%AE", //小文字のユヨが読み取れないのでユニコードで対応
         "¤","¡","°","¢","£",
 
         "¶Þ","·Þ","¸Þ","¹Þ","ºÞ", 
@@ -59,27 +59,28 @@ const IchigoJamEncoderTable = {
 
         "/","/","▘","▝","▀","▖","▌","▞","▛","▗","▚","▐","▜","▄","▙","▟","█","・","━","┃","╋","┫","┣","┻","┳","┏","┓","┗","┛","◤","◥","◣","◢"
     ]
-    
+
 }
 
-const IchigoJamEncoder = (resMsg,msgLength) => {
+const IchigoJamEncoder = (recMsg) => {
+    const recMsgLength = recMsg.length;
     let encodedMsg = "";
     let d = []; 
     //エンコード前の文字を1文字ずつ分割して配列dに格納
-    for(let i=0;i<msgLength;i++){
-        d[i] = resMsg.substr(i,1);
+    for(let i = 0; i < recMsgLength; i++){
+        d[i] = recMsg.substr(i,1);
     }
 
     //1文字ずつエンコード
-    for(let i=0;i<msgLength;i++){
+    for(let i = 0; i < recMsgLength; i++){
 
         //濁点、半濁点の時はスキップ
         if(d[i] == "Þ" || d[i] == "ß") continue;
 
-        //濁点の処理
+        //濁点文字の処理
         if(d[i+1] == "Þ") d[i] = d[i] + "Þ";
 
-        //半濁点の処理
+        //半濁点文字の処理
         if(d[i+1] == "ß") d[i] = d[i] + "ß";
 
         //アルファベットや数字、ひらがな、漢字の時はエンコードせず連結

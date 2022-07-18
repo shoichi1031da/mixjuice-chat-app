@@ -7,16 +7,16 @@ const { receiveMessageOnPort } = require("worker_threads");
 const server = http.createServer(app);
 const io = require("socket.io")(server);
 
-const cors = require('cors');
-app.use(cors());
-const corsOption = {
-    origin: [
-      "https://fukuno.jig.jp"
-    ],
-    credentials: true,
-  };
-  app.use(cors(corsOption));
-
+//herokuサーバーにCORSのヘッダー追加ができなかったためコメントアウト
+    // const cors = require('cors');
+    // app.use(cors());
+    // const corsOption = {
+    //     origin: [
+    //       "https://fukuno.jig.jp"
+    //     ],
+    //     credentials: true,
+    //   };
+    //   app.use(cors(corsOption));
 
 const PORT = process.env.PORT || 3000;
 const IchigoJamEncoder = require("./public/js/IchigoJamEncoder");
@@ -35,8 +35,7 @@ app.get("/",(req,res) => {
 
     //パラメータで受け取った文字列をエンコード
     if(recMsg){
-        let msgLength = recMsg.length;
-        let sendMsg = IchigoJamEncoder(recMsg,msgLength);
+        const sendMsg = IchigoJamEncoder(recMsg);
         
         if(cliantType.substr(0,8) == "MixJuice" || cliantType.substr(0,7) == "Mozilla"){
             io.emit("chat message", sendMsg);
