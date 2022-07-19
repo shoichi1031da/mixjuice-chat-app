@@ -29,7 +29,6 @@ let msgUri = "";
 
 app.get("/",(req,res) => {
     app.set("encodedStr","");
-    console.log(req);
     let cliantType = req.headers["user-agent"];
         console.log("\n クライアントタイプ:" + cliantType);
     let origin = req.headers.origin;
