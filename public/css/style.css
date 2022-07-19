@@ -35,22 +35,50 @@ body {
     .parameter{
         margin: 0 0 0 0;
         border-radius: 5px;
+        align-self: center;
+        text-align: center;
     }
 
-.notes {
+#notes {
     background-color: rgb(247, 247, 247);
     padding: 6px 0 6px 0;
     margin: 0 10px 15px 10px;
     border: 1px solid #e7e9e9;
     border-radius: 0 0 8px 8px;
     word-break: break-all; /*文字列の折り返し */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-    .note {
+    #note {
+        font-size: 10px;
+        margin: 6px 6px 0 10px;
+        line-height: 15px;
+        min-width: 130px;
+        min-height: 25px;
+        line-height:20px;
+        align-self: center;
+        text-align: center;
+        flex-grow: 1; 
+        flex-basis: 0;
+    }
+    #src {
         font-size: 10px;
         margin: 6px 10px 0 10px;
+        line-height:15px;
+        width: 100%;
+        text-align: center;
+        align-self: center;
+        /* flex-grow: 1;  */
+        /* flex-basis: 0; */
     }
 
+#line {
+    border-top: 1px solid #ccc;
+    margin:5px 5px 5px 0;
+    width: 100%; 
+}
 
 /* チャットエリア全体 */
 .container {
@@ -130,6 +158,7 @@ body {
 }
 
 #time {
+    min-width: 30px;
     font-size: 6px;
     color:gray;
     display: inline-flex;
