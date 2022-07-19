@@ -62,10 +62,25 @@ const IchigoJamEncoderTable = {
 
 }
 
-const IchigoJamEncoder = (recMsg) => {
+const IchigoJamEncoder = (recMsg,msgUri,icon,iconUri) => {
     const recMsgLength = recMsg.length;
     let encodedMsg = "";
+    let encodedIcon = "";
     let d = []; 
+
+    //アイコンの文字がアルファベットや数字、ひらがな、漢字の時はエンコードしない
+    if(iconUri.substr(0,2) != "%C"){
+        encodedIcon = icon;
+    } else {
+        //IchigoJamEncoderTableオブジェクトを参照しエンコード
+        for(const j in IchigoJamEncoderTable.sendStr){
+            if(icon == IchigoJamEncoderTable.recieveStr[j] || encodeURI(icon) == IchigoJamEncoderTable.recieveStr[j]){
+                encodedIcon = IchigoJamEncoderTable.sendStr[j];
+            } 
+        }  
+    }
+    
+
     //エンコード前の文字を1文字ずつ分割して配列dに格納
     for(let i = 0; i < recMsgLength; i++){
         d[i] = recMsg.substr(i,1);
@@ -83,8 +98,8 @@ const IchigoJamEncoder = (recMsg) => {
         //半濁点文字の処理
         if(d[i+1] == "ß") d[i] = d[i] + "ß";
 
-        //アルファベットや数字、ひらがな、漢字の時はエンコードせず連結
-        if(encodeURI(d[i]).substr(0,2) != "%C"){
+        //メッセージがアルファベットや数字、ひらがな、漢字の時はエンコードせず連結
+        if(msgUri.substr(0,2) != "%C" || encodeURI(d[i]).substr(0,2) != "%C"){
             encodedMsg = encodedMsg + d[i];
             continue;
         }
@@ -95,9 +110,11 @@ const IchigoJamEncoder = (recMsg) => {
                 encodedMsg = encodedMsg + IchigoJamEncoderTable.sendStr[j];
             } 
         }            
-    
-    } return encodedMsg;
+        
 
+    } 
+    let encodedStr = {msg:encodedMsg, icon:encodedIcon};
+    return encodedStr;
 }
 
 module.exports = IchigoJamEncoder;

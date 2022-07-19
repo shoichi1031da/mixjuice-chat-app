@@ -9,11 +9,15 @@
 </head>
 
 <body>
-    <img src="/img/mixchat.png" class="image" alt="title"width="240" height="70" loading="lazy">
+    <img src="/img/mixchat.png" class="image" alt="title">
     <h3 class="ichigojam">?"MJ GETS mixjuice-chat.herokuapp.com/?msg=メッセージ"</h3>
-    <p class="note">※パラメータに <span class="ichigojam">&redirect=on</span> を追加すると、MixJuice側でリダイレクトエラー(302)を起こさせ、GETメソッドのレスポンスを拒否できます。</p>
+    
+    <div class="notes">
+    <p class="note"><span class="ichigojam parameter">redirect=on</span> : HTMLのレスポンスを拒否</p>
     <p class="note">アプリの使い方・ソースコード : <a href="https://github.com/shoichi1031da/mixjuice-chat-app">https://github.com/shoichi1031da/mixjuice-chat-app</a></p>
-    <div id="container" class='container'>
+    </div>
+    
+    <div id="container" class="container bg_skew_dot is-mix">
     <ul id="messages"></ul>
     </div>
 

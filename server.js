@@ -7,7 +7,7 @@ const { receiveMessageOnPort } = require("worker_threads");
 const server = http.createServer(app);
 const io = require("socket.io")(server);
 
-//herokuサーバーにCORSのヘッダー追加ができなかったためコメントアウト
+//結局herokuサーバーにCORSのヘッダー追加ができなかったためコメントアウト
     // const cors = require('cors');
     // app.use(cors());
     // const corsOption = {
@@ -24,25 +24,39 @@ const IchigoJamEncoder = require("./public/js/IchigoJamEncoder");
 //publicディレクトリ内のファイルをロードできるようになる
 app.use(express.static('public'));
 
+let iconUri = "";
+let msgUri = "";
+
 app.get("/",(req,res) => {
-    app.set("sendMsg","");
+    app.set("encodedStr","");
+    console.log(req);
     let cliantType = req.headers["user-agent"];
         console.log("\n クライアントタイプ:" + cliantType);
+    let origin = req.headers.origin;
+        console.log("origin:" + origin);
+    
+    let icon = req.query.icon;
+    if(icon) {
+        iconUri = encodeURI(icon);
+        console.log(" iconエンコード:" + iconUri);
+    }
+        console.log("icon:" + icon);
     let recMsg = req.query.msg;
         console.log(" エンコード前:" + recMsg);
-    let encodedUri = encodeURI(recMsg); 
-        console.log(" ユニコード化:" + encodedUri);
+    msgUri = encodeURI(recMsg); 
+        console.log(" エンコード後:" + msgUri);
 
     //パラメータで受け取った文字列をエンコード
     if(recMsg){
-        const sendMsg = IchigoJamEncoder(recMsg);
+        const encodedStr = IchigoJamEncoder(recMsg,msgUri,icon,iconUri);
         
-        if(cliantType.substr(0,8) == "MixJuice" || cliantType.substr(0,7) == "Mozilla"){
-            io.emit("chat message", sendMsg);
-            app.set("sendMsg",sendMsg);
-            console.log(" ブラウザ表示:" + sendMsg);
+        if(cliantType.substr(0,8) == "MixJuice" || origin == "https://fukuno.jig.jp"){
+            io.emit("chat message", encodedStr.msg,encodedStr.icon);
+            //app.set("encodedStr",encodedStr);
+            console.log(" ブラウザ表示:" + encodedStr.msg);
+            if(encodedStr.icon)console.log(" アイコン:" + encodedStr.icon);
         }else{
-            app.set("sendMsg",recMsg);
+            app.set("encodedStr",encodedStr);
         }
     }
 
@@ -58,12 +72,14 @@ app.get("/",(req,res) => {
 //WebSocketの接続
 io.on("connection", (socket) => {
     console.log("ユーザーが接続しました");
-    let sendMsg = app.get("sendMsg")
-    if(sendMsg){
-        io.emit("chat message",sendMsg);
-        console.log(" ブラウザ表示:" + sendMsg);
+    let encodedStr = app.get("encodedStr")
+    if(encodedStr){
+        io.emit("chat message",encodedStr.msg,encodedStr.icon);
+        console.log(" ブラウザ表示:" + encodedStr.msg);
+        console.log(" アイコン表示:" + encodedStr.icon);
     }
 });
+
 
 server.listen(PORT, () => {
     console.log("listening on " + PORT);
