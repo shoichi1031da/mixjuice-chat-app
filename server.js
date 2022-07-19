@@ -31,6 +31,8 @@ app.get("/",(req,res) => {
     app.set("encodedStr","");
     let cliantType = req.headers["user-agent"];
         console.log("\n クライアントタイプ:" + cliantType);
+    
+    //IchigoJam web からのリクエストを受け付ける
     let origin = req.headers.origin;
         console.log("origin:" + origin);
     
@@ -51,7 +53,6 @@ app.get("/",(req,res) => {
         
         if(cliantType.substr(0,8) == "MixJuice" || origin == "https://fukuno.jig.jp"){
             io.emit("chat message", encodedStr.msg,encodedStr.icon);
-            //app.set("encodedStr",encodedStr);
             console.log(" ブラウザ表示:" + encodedStr.msg);
             if(encodedStr.icon)console.log(" アイコン表示:" + encodedStr.icon);
         }else{

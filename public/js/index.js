@@ -11,7 +11,7 @@ let nowDate = () => {
   return hour + ":" + minite; 
 }
 
-
+//気持ちレスポンシブに。後日対応予定
 let client_w = document.getElementById('notes').clientWidth;
 console.log(client_w);
 
@@ -29,7 +29,6 @@ if(client_w > 415){
   line.style.width = "0%";
   line.style.margin = "5px 10px 5px 0";
 }
-
 
 
 //全クライアントのブラウザに表示
@@ -52,6 +51,7 @@ socket.on("chat message", (MSG,ICON) => {
       container.scrollTop = container.scrollHeight;
   }
 
+// MixJuiceのレスポンスで全チャットの内容を返すプログラムを作る予定
 // socket.on("all messages", () => {
 //   socket.emit("all messages",container.textContent);
 // })

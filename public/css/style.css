@@ -76,7 +76,7 @@ body {
 
 #line {
     border-top: 1px solid #ccc;
-    margin:5px 5px 5px 0;
+    margin:5px 10px 5px 10px;
     width: 100%; 
 }
 
@@ -140,14 +140,14 @@ body {
 
     background-color: rgba(255, 255, 255, 0.85);
     border: 1px solid #e7eaea;
-    border-radius: 50px;
+    border-radius: 50%;
     
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     
-    line-height: 50px;
-    max-width : 50px;
-    min-width : 50px;
+    line-height: 40px;
+    max-width : 40px;
+    min-width : 40px;
     
     padding: 0;
     margin: 0 10 0 10px;
