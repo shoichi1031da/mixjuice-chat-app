@@ -25,6 +25,7 @@ const IchigoJamEncoder = require("./public/js/IchigoJamEncoder");
 app.use(express.static('public'));
 
 app.get("/",(req,res) => {
+    console.log(req.headers);
     app.set("sendMsg","");
     let cliantType = req.headers["user-agent"];
         console.log("\n クライアントタイプ:" + cliantType);
