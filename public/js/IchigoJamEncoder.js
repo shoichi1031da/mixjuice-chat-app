@@ -99,7 +99,7 @@ const IchigoJamEncoder = (recMsg,msgUri,icon,iconUri) => {
         if(d[i+1] == "ß") d[i] = d[i] + "ß";
 
         //メッセージがアルファベットや数字、ひらがな、漢字の時はエンコードせず連結
-        if(msgUri.substr(0,2) != "%C" || encodeURI(d[i]).substr(0,2) != "%C"){
+        if(encodeURI(d[i]).substr(0,2) != "%C"){
             encodedMsg = encodedMsg + d[i];
             continue;
         }
