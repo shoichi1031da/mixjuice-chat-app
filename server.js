@@ -53,7 +53,7 @@ app.get("/",(req,res) => {
             io.emit("chat message", encodedStr.msg,encodedStr.icon);
             //app.set("encodedStr",encodedStr);
             console.log(" ブラウザ表示:" + encodedStr.msg);
-            if(encodedStr.icon)console.log(" アイコン:" + encodedStr.icon);
+            if(encodedStr.icon)console.log(" アイコン表示:" + encodedStr.icon);
         }else{
             app.set("encodedStr",encodedStr);
         }

@@ -71,11 +71,13 @@ const IchigoJamEncoder = (recMsg,msgUri,icon,iconUri) => {
     //アイコンの文字がアルファベットや数字、ひらがな、漢字の時はエンコードしない
     if(iconUri.substr(0,2) != "%C"){
         encodedIcon = icon;
+        console.log("正解：encodedIcon" + encodedIcon);
     } else {
         //IchigoJamEncoderTableオブジェクトを参照しエンコード
         for(const j in IchigoJamEncoderTable.sendStr){
             if(icon == IchigoJamEncoderTable.recieveStr[j] || encodeURI(icon) == IchigoJamEncoderTable.recieveStr[j]){
                 encodedIcon = IchigoJamEncoderTable.sendStr[j];
+                console.log("不正解：encodedIcon" + encodedIcon);
             } 
         }  
     }
