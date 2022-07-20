@@ -1,5 +1,8 @@
 # MixJuice専用チャットアプリ "Mixchat!"
 ### https://mixjuice-chat.herokuapp.com/
+<img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/image/main.png" alt="メイン" title="main">
+
+https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/image/main.png
 
 GETメソッドのパラメータmsgにメッセージを代入しリクエストを送るとブラウザに表示されます。
 IchigoJamのカタカナや絵文字にも対応しています。
