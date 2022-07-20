@@ -3,12 +3,6 @@
     font-family: 'ichigojam';
     src: url('../font/IchigoJam-1.4.woff') format('woff');
 }
-
-
-@font-face {
-    font-family: 'gothic';
-    src: url('../font/GenJyuuGothic-Medium.woff') format('woff');
-}
   
 body {
     background-color: #fdffe5;
@@ -169,7 +163,7 @@ background: linear-gradient(0deg, rgba(16,185,179,1) 0%, rgba(140,244,111,1) 100
     min-width : 40px;
     
     padding: 0;
-    margin: 0 10 0 10px;
+    margin: 0 0 0 0;
 
     align-self: center;
     text-align: center;
@@ -177,9 +171,10 @@ background: linear-gradient(0deg, rgba(16,185,179,1) 0%, rgba(140,244,111,1) 100
 }
 
 #time {
-    min-width: 30px;
-    max-width: 50%;
-    font-size: 1vw;
+    min-width: 20px;
+    max-width: 30%;
+    font-size: 80%;
+    
     color:gray;
     display: inline-flex;
     padding: 5px 10px 0 10px;
