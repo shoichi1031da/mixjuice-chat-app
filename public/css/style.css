@@ -170,10 +170,11 @@ background: linear-gradient(0deg, rgba(16,185,179,1) 0%, rgba(140,244,111,1) 100
 
 #time {
     min-width: 30px;
-    font-size: 6px;
+    max-width: 50px;
+    font-size: 0.5em;
     color:gray;
     display: inline-flex;
-    padding: 5px 10px 0 15px;
+    padding: 5px 10px 0 10px;
     align-items: center;
     word-break: break-all; /*文字列の折り返し */
     text-size-adjust: none;
