@@ -14,8 +14,10 @@ header {
 }
 
 .image{
-    width: 230px;
-    height: 53px;
+    width:100%;
+
+    max-width: 230px;
+    max-height: 53px;
     margin: 20px 0px -5px 17px;
     transform: rotateZ( -3deg );
 }
@@ -174,6 +176,7 @@ background: linear-gradient(0deg, rgba(16,185,179,1) 0%, rgba(140,244,111,1) 100
     padding: 5px 10px 0 15px;
     align-items: center;
     word-break: break-all; /*文字列の折り返し */
+    text-size-adjust: none;
  }
 
  #message {
