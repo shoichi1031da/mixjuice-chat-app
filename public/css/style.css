@@ -169,8 +169,8 @@ background: linear-gradient(0deg, rgba(16,185,179,1) 0%, rgba(140,244,111,1) 100
 }
 
 #time {
-    min-width: 20px;
-    max-width: 50px;
+    min-width: 40px;
+    max-width: 50px; 
     font-size: 80%;
     
     color:gray;
