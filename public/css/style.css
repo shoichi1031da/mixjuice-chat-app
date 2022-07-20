@@ -127,12 +127,10 @@ background: linear-gradient(0deg, rgba(16,185,179,1) 0%, rgba(140,244,111,1) 100
 /* チャットメッセージ部分 */
 
 #messages {
-    font-family: 'gothic';
     list-style-type: none;
     margin: 0;
     padding: 0;
     border-radius: 10px;
-    
 }
 
     #messages > li {
@@ -172,7 +170,7 @@ background: linear-gradient(0deg, rgba(16,185,179,1) 0%, rgba(140,244,111,1) 100
 
 #time {
     min-width: 20px;
-    max-width: 30%;
+    max-width: 50px;
     font-size: 80%;
     
     color:gray;
