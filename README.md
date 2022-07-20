@@ -28,7 +28,8 @@ https://mixjuice-chat.herokuapp.com/?msg=アドレスバーにメッセージを
 
 ### ?"MJ GETS mixjuice-chat.herokuapp.com/?icon=キャラ&msg=メッセージ"
 
-### ※注意※ キーにスペースは使えません。
+※注意※ キーにスペースは使えません。
+
 MixJuice、IchigoJam実機の場合は、スペースをパラメータに使わないでください。
 
 ## 使用例3)IchigoJam Webの仮想MixJuice機能の場合
