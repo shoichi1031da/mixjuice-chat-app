@@ -56,6 +56,7 @@ app.get("/",(req,res) => {
             console.log(" ブラウザ表示:" + encodedStr.msg);
             if(encodedStr.icon)console.log(" アイコン表示:" + encodedStr.icon);
         }else{
+            encodedStr.icon = icon;
             app.set("encodedStr",encodedStr);
         }
     }

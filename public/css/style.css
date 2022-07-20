@@ -87,7 +87,7 @@ background: linear-gradient(0deg, rgba(16,185,179,1) 0%, rgba(140,244,111,1) 100
     }
 
 #line {
-    border-top: 1px solid #ccc;
+    border-top: 1px solid rgb(160, 213, 213);
     margin:5px 10px 5px 10px;
     width: 100%; 
 }
@@ -176,7 +176,7 @@ background: linear-gradient(0deg, rgba(16,185,179,1) 0%, rgba(140,244,111,1) 100
     
     color:gray;
     display: inline-flex;
-    padding: 5px 5px 0 10px;
+    padding: 5px 0 0 10px;
     align-items: center;
     word-break: break-all; /*文字列の折り返し */
     text-size-adjust: none;
