@@ -19,8 +19,9 @@ let notes = document.getElementById('notes');
 let note = document.getElementById('note');
 let src = document.getElementById('src');
 let line = document.getElementById('line');
+
 if(client_w > 415){
-  
+
   notes.style.flexWrap = "none";
   note.style.flexGrow = "none"
   src.style.width = "0%";
@@ -28,6 +29,7 @@ if(client_w > 415){
   src.style.flexBasis = "0";
   line.style.width = "0%";
   line.style.margin = "5px 10px 5px 0";
+  
 }
 
 

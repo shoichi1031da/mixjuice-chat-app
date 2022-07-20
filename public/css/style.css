@@ -8,21 +8,30 @@ body {
     background-color: #fdffe5;
 }
 
+header {
+    display: flex;
+    margin:0;
+}
+
 .image{
-    width: 240px;
-    height: 70px;
-    margin: 5px 0px 5px 10px;
-    
+    width: 230px;
+    height: 53px;
+    margin: 20px 0px -5px 17px;
+    transform: rotateZ( -3deg );
 }
 
 .h3{
-    margin: 0;
+    margin: -10px 0;
+    overflow: hidden;
 }
 
 .ichigojam{
     font-family: "ichigojam";
     white-space: pre-wrap;
-    background: #000;
+    /* background: rgb(0, 0, 0); */
+    background: rgb(16,185,179);
+background: linear-gradient(0deg, rgba(16,185,179,1) 0%, rgba(140,244,111,1) 100%);
+
     color: white;
     padding: .7em 1em;
     margin: 0 10px 0 10px;
@@ -40,7 +49,7 @@ body {
     }
 
 #notes {
-    background-color: rgb(247, 247, 247);
+    background-color: rgb(246, 254, 255);
     padding: 6px 0 6px 0;
     margin: 0 10px 15px 10px;
     border: 1px solid #e7e9e9;
@@ -173,3 +182,55 @@ body {
     align-items: center;
     word-break: break-all; /*文字列の折り返し */
  }
+
+
+ /* シャボン玉アニメーション */
+ .soap_wrap {
+	position: relative;
+	height: 10px; /*お好みで*/
+    /* flex-shrink: 0; */
+}
+.soap {
+	position: absolute;
+	left: calc(50% + 100px); /*お好みで*/
+	top: calc(50% - 115px); /*お好みで*/
+	width: 100px; /*お好みで*/
+	height: 100px; /*お好みで*/
+	border-radius: 50% 46% 48% 44%;
+	overflow: hidden;
+	background: radial-gradient(at 46% 54%, transparent 50%, rgba(2, 172, 253,0.3) 70%, transparent 100%) 50% 50% no-repeat;
+	z-index: 1;
+}
+
+.soap::before{
+	content: "";
+	position: absolute;
+	right: -10%;
+	bottom: -10%;
+	width: 60%;
+	height: 60%;
+	border-radius: 60% 0;
+	background: radial-gradient(at 0 0, rgba(0, 130, 255, 0.3) 40%, rgba(255, 154, 204, 0.7) 50%);
+	transform-origin: 0 0;
+	animation: soap_rotate 15s 0s ease-in-out infinite;
+	filter: blur(15px);
+}
+.soap::after{
+	content: "";
+	position: absolute;
+	left: -10%;
+	top: -10%;
+	width: 60%;
+	height: 60%;
+	border-radius: 20% 0;
+	background: radial-gradient(at 100% 100%, rgba(255, 255, 100, 0.5) 40%, rgba(120, 255, 140, 0.7) 60%);
+	transform-origin: 100% 100%;
+	animation: soap_rotate 6s 0s ease-in-out infinite;
+	filter: blur(15px);
+}
+
+/*ツヤ感アニメーション*/
+@keyframes soap_rotate{
+	0%{transform: rotate(0);}
+	50%{transform: rotate(160deg);}
+}

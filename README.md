@@ -26,7 +26,7 @@ https://mixjuice-chat.herokuapp.com/?msg=アドレスバーにメッセージを
 
 追加機能2)アイコンに使用する文字をiconパラメーターで指定できます（デフォルトは🍓）。アルファベットなら2文字まで指定できます。
 
-### ?"MJ GETS mixjuice-chat.herokuapp.com/?icon=🐱&msg=メッセージ"
+### ?"MJ GETS mixjuice-chat.herokuapp.com/?icon=キャラ&msg=メッセージ"
 
 ### ※注意※ キーにスペースは使えません。
 MixJuice、IchigoJam実機の場合は、スペースをパラメータに使わないでください。

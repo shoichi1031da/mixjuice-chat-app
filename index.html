@@ -10,18 +10,25 @@
 </head>
 
 <body>
-    <img src="/img/mixchat.png" class="image" alt="title">
+    <div class="header">
+        <img src="/img/mixchat!.png" class="image" alt="title">
+        <div class="soap_wrap">
+            <div class="soap"></div>
+            <div class="soap" style="width: 50px; height: 50px;top:calc(50% - 47px); left:calc(45% + 100px);"></div>
+        </div>
+    </div>
+
     <h3 class="ichigojam">?"MJ GETS mixjuice-chat.herokuapp.com/?msg=メッセージ"</h3>
     
     <div id="notes">
-    <p id="note"><span class="ichigojam parameter">redirect=on</span><br>HTMLのレスポンス拒否</p>
-    <p id="note"><span class="ichigojam parameter">icon=ｷｬﾗ</span><br>アイコンのキャラ指定</p>
-    <hr id="line">
-    <p id="src"><a href="https://github.com/shoichi1031da/mixjuice-chat-app">アプリの使い方 | src on GitHub</a></p>
+        <p id="note"><span class="ichigojam parameter">redirect=on</span><br>HTMLのレスポンス拒否</p>
+        <p id="note"><span class="ichigojam parameter">icon=ｷｬﾗ</span><br>アイコンのキャラ指定</p>
+        <hr id="line">
+        <p id="src"><a href="https://github.com/shoichi1031da/mixjuice-chat-app">アプリの使い方 | src on GitHub</a></p>
     </div>
     
     <div id="container" class="container bg_skew_dot is-mix">
-    <ul id="messages"></ul>
+        <ul id="messages"></ul>
     </div>
 
     <script src="/socket.io/socket.io.js"></script>
