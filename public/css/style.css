@@ -134,7 +134,7 @@ background: linear-gradient(0deg, rgba(16,185,179,1) 0%, rgba(140,244,111,1) 100
 }
 
     #messages > li {
-        padding: .5rem 1rem;
+        padding: .4rem 1rem;
         border-radius: 10px;
         background:rgba(255, 255, 255, 0.7);
         display: flex;
@@ -149,6 +149,7 @@ background: linear-gradient(0deg, rgba(16,185,179,1) 0%, rgba(140,244,111,1) 100
 
 #icon {
 
+    font-size: 95%;
     background-color: rgba(255, 255, 255, 0.85);
     border: 1px solid #e7eaea;
     border-radius: 50%;
@@ -161,7 +162,7 @@ background: linear-gradient(0deg, rgba(16,185,179,1) 0%, rgba(140,244,111,1) 100
     min-width : 40px;
     
     padding: 0;
-    margin: 0 0 0 0;
+    margin: 0 0 0 -3px;
 
     align-self: center;
     text-align: center;
@@ -171,18 +172,19 @@ background: linear-gradient(0deg, rgba(16,185,179,1) 0%, rgba(140,244,111,1) 100
 #time {
     min-width: 40px;
     max-width: 50px; 
-    font-size: 80%;
+    font-size: 70%;
     
     color:gray;
     display: inline-flex;
-    padding: 5px 10px 0 10px;
+    padding: 5px 5px 0 10px;
     align-items: center;
     word-break: break-all; /*文字列の折り返し */
     text-size-adjust: none;
  }
 
  #message {
-    font-size: 20px;
+    font-size: 110%;
+    line-height:20px;
     display: inline-flex;
     align-items: center;
     word-break: break-all; /*文字列の折り返し */
