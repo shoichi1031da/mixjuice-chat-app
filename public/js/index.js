@@ -1,4 +1,4 @@
-
+//タグの要素を取得
 const header = document.getElementById('header');
   const btn = document.getElementById('btn');
 const ichigojam = document.getElementById('ichigojam');

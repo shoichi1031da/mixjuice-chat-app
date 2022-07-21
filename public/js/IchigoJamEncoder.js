@@ -113,7 +113,6 @@ const IchigoJamEncoder = (recMsg,msgUri,icon,iconUri) => {
             } 
         }            
         
-
     } 
     let encodedStr = {msg:encodedMsg, icon:encodedIcon};
     return encodedStr;
