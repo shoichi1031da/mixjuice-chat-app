@@ -37,11 +37,11 @@ app.get("/",(req,res) => {
         console.log("origin:" + origin);
     
     let icon = req.query.icon;
+    console.log("icon:" + icon);
     if(icon) {
         iconUri = encodeURI(icon);
         console.log(" iconエンコード:" + iconUri);
     }
-        console.log("icon:" + icon);
     let recMsg = req.query.msg;
         console.log(" エンコード前:" + recMsg);
     msgUri = encodeURI(recMsg); 
@@ -49,14 +49,14 @@ app.get("/",(req,res) => {
 
     //パラメータで受け取った文字列をエンコード
     if(recMsg){
+        if(!icon)icon = "";
         const encodedStr = IchigoJamEncoder(recMsg,msgUri,icon,iconUri);
         
         if(cliantType.substr(0,8) == "MixJuice" || origin == "https://fukuno.jig.jp"){
             io.emit("chat message", encodedStr.msg,encodedStr.icon);
-            console.log(" ブラウザ表示:" + encodedStr.msg);
-            if(encodedStr.icon)console.log(" アイコン表示:" + encodedStr.icon);
+                console.log(" ブラウザ表示:" + encodedStr.msg);
+                console.log(" アイコン表示:" + encodedStr.icon);
         }else{
-            encodedStr.icon = icon;
             app.set("encodedStr",encodedStr);
         }
     }
