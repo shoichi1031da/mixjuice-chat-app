@@ -62,12 +62,12 @@ app.get("/",(req,res) => {
     }
 
     //MixJuice側へのHTMLレスポンスを強制終了させるためにリダイレクトエラーを起こす
-    if(req.query.redirect){
-        console.log(" リダイレクト:" + req.query.redirect);
-        res.redirect('https://google.com');
+    if(req.query.res == "off"){
+        console.log(" レスポンス:" + req.query.res);
+        res.send("");
+    } else {
+        res.sendFile(__dirname + "/index.html");
     }
-
-    res.sendFile(__dirname + "/index.html");
 });
 
 //WebSocketの接続

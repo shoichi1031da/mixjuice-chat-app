@@ -4,46 +4,41 @@
     src: url('../font/IchigoJam-1.4.woff') format('woff');
 }
   
-body {
+html, body {
     background-color: #fdffe5;
+    margin: 0;
+    font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro";
 }
 
 header {
     display: flex;
-    margin:0;
+    margin:0;    
 }
 
-.image{
-    width:100%;
+    .image{
+        width:100%;
+        max-width: 230px;
+        max-height: 53px;
+        margin: 11px 0px -5px 17px;
+        transform: rotateZ( -3deg );
+    }
 
-    max-width: 230px;
-    max-height: 53px;
-    margin: 11px 0px -5px 17px;
-    transform: rotateZ( -3deg );
-}
-
-.h3{
-    margin: -10px 0;
-    overflow: hidden;
-}
 
 .ichigojam{
     font-family: "ichigojam";
+    font-size: 80%;
     white-space: pre-wrap;
-    /* background: rgb(0, 0, 0); */
-    background: rgb(16,185,179);
-background: linear-gradient(0deg, rgba(16,185,179,1) 0%, rgba(140,244,111,1) 100%);
-
+    background: linear-gradient(0deg, rgba(16,185,179,1) 0%, rgba(140,244,111,1) 100%);
     color: white;
     padding: .7em 1em;
     margin: 0 10px 0 10px;
     line-height: 1.3em;
     letter-spacing: 0px;
-    font-size: 85%;
     word-break: break-all;
     border-radius: 8px 8px 0 0;
 }
     .parameter{
+        font-size: 100%;
         margin: 0 0 0 0;
         border-radius: 5px;
         align-self: center;
@@ -54,7 +49,7 @@ background: linear-gradient(0deg, rgba(16,185,179,1) 0%, rgba(140,244,111,1) 100
     
     background-color: rgb(246, 254, 255);
     padding: 6px 0 6px 0;
-    margin: 0 10px 15px 10px;
+    margin: 0 10px -5px 10px;
     border: 1px solid #e7e9e9;
     border-radius: 0 0 8px 8px;
     word-break: break-all; /*文字列の折り返し */
@@ -82,8 +77,9 @@ background: linear-gradient(0deg, rgba(16,185,179,1) 0%, rgba(140,244,111,1) 100
         width: 100%;
         text-align: center;
         align-self: center;
-        /* flex-grow: 1;  */
-        /* flex-basis: 0; */
+        flex-grow: 1; 
+        flex-basis: 0;
+        
     }
 
 #line {
@@ -92,18 +88,51 @@ background: linear-gradient(0deg, rgba(16,185,179,1) 0%, rgba(140,244,111,1) 100
     width: 100%; 
 }
 
+#center{
+    text-align: center;
+}
+
+.btn-cap {
+    font-size: 50%;
+    color:rgb(42, 135, 76);
+    
+    max-height: 10px;
+    padding: 0;
+    transition: background-color .5s;
+    display: inline-block;
+
+    border-radius: 0 0 5px 5px; 
+    border-bottom: 10px solid rgb(227, 158, 158);
+    margin:auto;
+
+}
+.btn-cap:hover {
+    /* background-color: rgb(227, 158, 158); */
+    /* color: rgb(227, 158, 158); */
+    border-bottom: 20px solid rgb(227, 158, 158);
+    border-radius: 0 0 15px 15px; 
+    visibility:visible;
+    cursor: pointer;
+    
+	/* box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3); */
+  }
+
 /* チャットエリア全体 */
 .container {
-    height: 380px;
+    
     resize: both; 
+    max-height: 580px;
     overflow: scroll;
-    padding: 10px 8px;
+    padding: 0px 8px;
     margin: 0 10px 0 10px;
     border-radius: 20px;
-    background-color: rgb(239, 249, 249);
     box-shadow: 10px 11px 20px 0px rgb(0 0 0 / 40%);
     border-radius: 15px;
-    border: 1px solid #e7e9e9;
+    /* border-top: 5px solid rgb(196, 154, 154); */
+}
+
+.container::-webkit-scrollbar{
+    display: none;
 }
 
     /* ドット斜め */
@@ -122,73 +151,87 @@ background: linear-gradient(0deg, rgba(16,185,179,1) 0%, rgba(140,244,111,1) 100
         radial-gradient(#def7f3 20%, transparent 20%),
         radial-gradient(#ffe3e3 20%, transparent 20%);
     }
+    
+    /* .btn-cover {
+        font-size: 50%;
+        color:rgb(255, 255, 255);
+        height:10px;
+        background-color: rgb(196, 154, 154);
+        margin:0 -10px 10px -10px;
+        padding:0;
+        
+        align-self: center;
+        text-align: center;
+    } */
+
+    #messages {
+        
+        list-style-type: none;
+        padding:5px 0 0 50px;
+        margin-top :-10px;
+    }
+
+        #messages > li {
+            
+            background:rgb(244, 220, 220);
+            border-radius: 10px;
+            display: flex;
+            margin: 0 0 7px 0;
+            
+        }
+
+        #messages > li:nth-child(odd) {
+            background: rgb(220, 253, 171);
+            border-radius:10px;
+            margin: 0 0 7px 0;
+        } 
 
 
-/* チャットメッセージ部分 */
+    #icon {
 
-#messages {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    border-radius: 10px;
-}
+        font-size: 95%;
+        background-color: rgba(255, 255, 255, 0.85);
+        border: 1px solid #e7eaea;
+        border-radius: 50%;
+        
+        width: 40px;
+        height: 40px;
+        
+        line-height: 40px;
+        max-width : 40px;
+        min-width : 40px;
+        
+        padding: 0;
+        margin-left:-50px;
 
-    #messages > li {
-        padding: .4rem 1rem;
-        border-radius: 10px;
-        background:rgba(255, 255, 255, 0.7);
-        display: flex;
+        align-self: center;
+        text-align: center;
         
     }
 
-    #messages > li:nth-child(odd) {
-        background: rgb(220, 253, 171);
-        border-radius: 10px;
-    } 
+    /* #time {
+        min-width: 40px;
+        max-width: 50px; 
+        font-size: 70%;
+        
+        color:gray;
+        display: inline-flex;
+        padding: 5px 0 0 3px;
+        margin-left:-20px;
 
+        align-items: center;
+        word-break: break-all;
+        text-size-adjust: none;
+    } */
 
-#icon {
-
-    font-size: 95%;
-    background-color: rgba(255, 255, 255, 0.85);
-    border: 1px solid #e7eaea;
-    border-radius: 50%;
-    
-    width: 40px;
-    height: 40px;
-    
-    line-height: 40px;
-    max-width : 40px;
-    min-width : 40px;
-    
-    padding: 0;
-    margin: 0 0 0 -3px;
-
-    align-self: center;
-    text-align: center;
-    
-}
-
-#time {
-    min-width: 40px;
-    max-width: 50px; 
-    font-size: 70%;
-    
-    color:gray;
-    display: inline-flex;
-    padding: 5px 0 0 10px;
-    align-items: center;
-    word-break: break-all; /*文字列の折り返し */
-    text-size-adjust: none;
- }
-
- #message {
-    font-size: 110%;
-    line-height:20px;
-    display: inline-flex;
-    align-items: center;
-    word-break: break-all; /*文字列の折り返し */
- }
+    #message {
+        font-size: 1rem;
+        line-height:25px;
+        margin: 10px 10px 10px 25px;
+        display: inline-flex;
+        align-items: center;
+        word-break: break-all; /*文字列の折り返し */
+    }
 
 
  /* シャボン玉アニメーション */

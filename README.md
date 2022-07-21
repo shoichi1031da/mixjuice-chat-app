@@ -48,5 +48,9 @@ https://fukuno.jig.jp/app/IchigoJam/
 
 https://fukuno.jig.jp/app/IchigoJam/#10%20%3F%22MJ%20GETS%20mixjuice-chat.herokuapp.com%2F%3Fmsg%3DIchigoJamWeb%22%0A
 
-※IchigoJam Webの場合はスペースをパラメータに使うことができます。
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/image/sample4_ichigojamweb.png" alt="IchigoJamweb" title="ichigojamweb">
+※IchigoJam Webの場合はスペースをパラメータに使うことができます。
+
+## その他
+質問はTwitterのDMにてお願いします。
+<a hef="https://twitter.com/shihan_hanadojo">@shihan_hanadojo</a>
