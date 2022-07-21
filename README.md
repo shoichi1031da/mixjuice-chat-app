@@ -59,4 +59,5 @@ https://fukuno.jig.jp/app/IchigoJam/#10%20%3F%22MJ%20GETS%20mixjuice-chat.heroku
 
 ## その他
 質問はTwitterのDMにてお願いします。
-<p><a hef="https://twitter.com/shihan_hanadojo">@shihan_hanadojo</a></p>
+
+https://twitter.com/shihan_hanadojo
