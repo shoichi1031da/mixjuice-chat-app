@@ -59,6 +59,10 @@ https://fukuno.jig.jp/app/IchigoJam/#10%20%3F%22MJ%20GETS%20mixjuice-chat.heroku
 ※IchigoJam Webの場合はスペースをパラメータに使うことができます。
 
 ## その他
-質問はTwitterのDMにてお願いします。
+このアプリは自分のスキルアップを目的に作成していることもあり、プルリクエストがあってもマージすることはないと思います。
+
+バグ報告やアドバイス、ご要望はぜひお願いします。
+
+TwitterのDMでも構いません。
 
 https://twitter.com/shihan_hanadojo
