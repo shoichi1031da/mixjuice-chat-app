@@ -7,17 +7,7 @@ const { receiveMessageOnPort } = require("worker_threads");
 const server = http.createServer(app);
 const io = require("socket.io")(server);
 
-//結局herokuサーバーにCORSのヘッダー追加ができなかったためコメントアウト
-    // const cors = require('cors');
-    // app.use(cors());
-    // const corsOption = {
-    //     origin: [
-    //       "https://fukuno.jig.jp"
-    //     ],
-    //     credentials: true,
-    //   };
-    //   app.use(cors(corsOption));
-
+//IchigoJamwebでのCORS対応
 const cors = require('cors');
 app.use(
     cors({
@@ -58,7 +48,7 @@ app.get("/",(req,res) => {
         if(!icon)icon = "";
         const encodedStr = IchigoJamEncoder(recMsg,msgUri,icon,iconUri);
         
-        if(cliantType.substr(0,8) == "MixJuice" || origin == "https://fukuno.jig.jp"){
+        if(cliantType.substr(0,8) == "MixJuice"){
             io.emit("chat message", encodedStr.msg,encodedStr.icon);
                 console.log(" ブラウザ表示:" + encodedStr.msg);
                 console.log(" アイコン表示:" + encodedStr.icon);
