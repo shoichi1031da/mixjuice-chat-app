@@ -1,8 +1,9 @@
-# MixJuice専用チャットアプリ "Mixchat!" v1.2.1
+# MixJuice専用チャットアプリ "Mixchat!" バージョン 2.1.1
 ### https://mixjuice-chat.herokuapp.com/
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/main.png" alt="メイン" title="main">
 
-GETメソッドのパラメータmsgにメッセージを代入しリクエストを送るとブラウザに表示されます。
+GETメソッドのパラメータmsgにメッセージを入力しリクエストを送るとブラウザに表示され、チャットができます。
+
 IchigoJamのカタカナや絵文字にも対応しています。
 
 IchigoJamでのネットワーク講座などでご利用ください。
