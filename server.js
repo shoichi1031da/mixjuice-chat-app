@@ -18,6 +18,12 @@ const io = require("socket.io")(server);
     //   };
     //   app.use(cors(corsOption));
 
+const cors = require('cors');
+app.use(
+    cors({
+        origin: "https://fukuno.jig.jp",
+    }));
+
 const PORT = process.env.PORT || 3000;
 const IchigoJamEncoder = require("./public/js/IchigoJamEncoder");
 
