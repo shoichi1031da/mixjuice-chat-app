@@ -1,13 +1,13 @@
-
+//タグの要素を取得
 const header = document.getElementById('header');
-  const btn = document.getElementById('btn');
 const ichigojam = document.getElementById('ichigojam');
-const container = document.getElementById('container');
 const notes = document.getElementById('notes');
   const note = document.getElementById('note');
   const src = document.getElementById('src');
   const line = document.getElementById('line');
   const link = document.getElementById('link');
+const btn = document.getElementById('btn');
+const container = document.getElementById('container');
 
 //気持ちレスポンシブに。後日対応予定
   let src_w = document.getElementById('src').clientWidth;

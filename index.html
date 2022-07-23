@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="og:url" content="https://mixjuice-chat.herokuapp.com"> 
+    <meta name="og:title" content="Mixchat!">
+    <meta name="og:image" content="/img/ogp.png">  
+    <meta name="og:description" content="IchigoJam専用のweb上でチャットができるアプリです">  
+    <meta name="og:type" content="website">  
+
     <title>Mixchat!</title>
-    <!-- faviconの設定が上手くいかない。。 -->
-    <link rel="favicon", sizes="64x64", href="/img/favicon.ico">
+    <link rel="icon", type="image/x-icon", href="/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">  
 </head>
 
@@ -22,10 +27,10 @@
 
     <div id="notes">
         <p id="note">
-            <span class="ichigojam parameter">res=off</span>
+            <span class="ichigojam parameter"><a href="https://fukuno.jig.jp/app/IchigoJam/#OK2%0AOK2%0ACLS%0A%0A10%20%3F%22MJ%20GETS%20mixjuice-chat.herokuapp.com%2F%3Fmsg%3D%EF%BE%92%EF%BD%AF%EF%BD%BE%EF%BD%B0%EF%BD%BC%26res%3Doff%22%0A%0A%0A%EF%BE%81%EF%BD%AD%EF%BD%B3%EF%BD%B2%0A%20%5BI%2FO%5D%EF%BE%80%EF%BE%8C%EF%BE%9E%20%EF%BD%A6%20%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%82%B7%E3%83%86%20%5BMixJuice%5D%20%EF%BE%86%20%EF%BE%81%EF%BD%AA%EF%BD%AF%EF%BD%B8%20%EF%BD%A6%20%EF%BD%B2%EF%BE%9A%EF%BE%83%EF%BD%B8%EF%BE%80%EF%BE%9E%EF%BD%BB%EF%BD%B2%0A%0AOK%0A" target="_blank" rel="noopener noreferrer" style="color:white; text-decoration: none;">res=off</a></span>
             <br>HTMLのレスポンス拒否
         </p>
-        <p id="note"><span class="ichigojam parameter">icon=ｷｬﾗ</span>
+        <p id="note"><span class="ichigojam parameter"><a href="https://fukuno.jig.jp/app/IchigoJam/#OK2%0AOK2%0ACLS%0A%0A10%20%3F%22MJ%20GETS%20mixjuice-chat.herokuapp.com%2F%3Fmsg%3D%EF%BE%92%EF%BD%AF%EF%BD%BE%EF%BD%B0%EF%BD%BC%26icon%3D%EF%BD%B7%EF%BD%AC%EF%BE%97%22%0A%0A%0A%EF%BE%81%EF%BD%AD%EF%BD%B3%EF%BD%B2%0A%20%5BI%2FO%5D%EF%BE%80%EF%BE%8C%EF%BE%9E%20%EF%BD%A6%20%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E3%82%B7%E3%83%86%20%5BMixJuice%5D%20%EF%BE%86%20%EF%BE%81%EF%BD%AA%EF%BD%AF%EF%BD%B8%20%EF%BD%A6%20%EF%BD%B2%EF%BE%9A%EF%BE%83%EF%BD%B8%EF%BE%80%EF%BE%9E%EF%BD%BB%EF%BD%B2%0A%0AOK%0A" target="_blank" rel="noopener noreferrer" style="color:white; text-decoration: none;">icon=ｷｬﾗ</a></span>
             <br>アイコンのキャラ指定
         </p>
         <hr id="line">
@@ -35,11 +40,10 @@
     </div>
 
     <div id="center">
-        <p type="button" id="btn" class="btn-cap">▲▲▲</p>
+        <p type="button" id="btn" class="btn">▲▲▲</p>
     </div>
     
     <div id="container" class="container bg_skew_dot is-mix">
-        <p type="button" id="btn" class="btn-cover"></p>
         <ul id="messages"></ul>
     </div>
 

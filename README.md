@@ -1,4 +1,4 @@
-# MixJuice専用チャットアプリ "Mixchat!" バージョン 2.1.1
+# MixJuice専用チャットアプリ "Mixchat!"
 ### https://mixjuice-chat.herokuapp.com/
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/main.png" alt="メイン" title="main">
 
@@ -7,10 +7,6 @@ GETメソッドのパラメータmsgにメッセージを入力しリクエス�
 IchigoJamのカタカナや絵文字にも対応しています。
 
 IchigoJamでのネットワーク講座などでご利用ください。
-
-＜今後の対応予定＞
-
-・クローズドなグループチャット機能（現在は完全にオープンチャット）
 
 ## 使用例1)ブラウザの場合
 アドレスバーにmsgパラメータ付きで入力しアクセスするとメッセージを送ることができます。
@@ -36,12 +32,12 @@ https://mixjuice-chat.herokuapp.com/?msg=アドレスバーにメッセージを
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/sample1_msg_result.png" alt="メッセージ結果" title="msg_result">
 
 ### 追加機能1）MixJuice側でGETリクエストを拒否できます。resパラメーターを追加します。
-?"MJ GETS mixjuice-chat.herokuapp.com/?res=off&msg=メッセージ"
+?"MJ GETS mixjuice-chat.herokuapp.com/?msg=メッセージ&res=off"
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/sample2_res.png" alt="リダイレクト" title="redirect">
 
 ### 追加機能2)アイコンに使用する文字をiconパラメーターで指定できます（デフォルトは🍓）。アルファベットなら2文字まで指定できます。
 
-?"MJ GETS mixjuice-chat.herokuapp.com/?icon=キャラ&msg=メッセージ"
+?"MJ GETS mixjuice-chat.herokuapp.com/?msg=メッセージ&icon=キャラ"
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/sample3_icon.png" alt="アイコン" title="icon">
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/sample3_icon_result.png" alt="アイコン結果" title="icon_result">
 
@@ -51,7 +47,12 @@ MixJuice、IchigoJam実機の場合は、スペースをパラメータに使わ
 
 ## 使用例3)IchigoJam Webの仮想MixJuice機能の場合
 https://fukuno.jig.jp/app/IchigoJam/
-「I/O」ボタンをクリックし、「MixJuice」のチェックボックスにチェックを入れるとMixJuice機能が使えます。使い方は使用例2)と同じです。
+<img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/ichigojam_web.png" alt="IchigoJamwebリンク" title="ichigojam_web">
+Mixchat!上部にあるプログラムをクリックすると、そのプログラムを読み込んだIchigoJamwebにアクセスできます。
+
+「I/O」ボタンをクリックし、「MixJuice」のチェックボックスにチェックを入れるとMixJuice機能が使えます。
+
+使い方は使用例2)と同じです。
 
 https://fukuno.jig.jp/app/IchigoJam/#10%20%3F%22MJ%20GETS%20mixjuice-chat.herokuapp.com%2F%3Fmsg%3DIchigoJamWeb%22%0A
 
@@ -66,3 +67,16 @@ https://fukuno.jig.jp/app/IchigoJam/#10%20%3F%22MJ%20GETS%20mixjuice-chat.heroku
 TwitterのDMでも構いません。
 
 https://twitter.com/shihan_hanadojo
+
+## バージョン
+<ur>
+<li>1.0.0 2022.7.18　初公開</li>
+<li>1.1.0 2022.7.19　IchigoJam絵文字対応</li>
+<li>2.0.0 2022.7.20　CSSグレードアップ,icon機能追加</li>
+<li>2.1.0 2022.7.21　レスポンシブ微対応,redirect→res機能に変更</li>
+<li>2.1.1 2022.7.22　全画面表示機能追加,CORS対応</li>
+</ur>
+
+＜今後対応予定＞
+
+クローズドなグループチャット機能（現在は完全にオープンチャット）

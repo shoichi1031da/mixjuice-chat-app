@@ -36,13 +36,18 @@ header {
     letter-spacing: 0px;
     word-break: break-all;
     border-radius: 8px 8px 0 0;
+    
 }
+    .ichigojam:hover{
+        background:black;
+    }
     .parameter{
         font-size: 100%;
         margin: 0 0 0 0;
         border-radius: 5px;
         align-self: center;
         text-align: center;
+        transition: none;
     }
 
 #notes {
@@ -92,21 +97,21 @@ header {
     text-align: center;
 }
 
-.btn-cap {
+.btn {
     font-size: 50%;
-    color:rgb(42, 135, 76);
+    color:rgb(82, 182, 119);
     
     max-height: 10px;
     padding: 0;
-    transition: background-color .5s;
     display: inline-block;
 
     border-radius: 0 0 5px 5px; 
-    border-bottom: 10px solid rgb(227, 158, 158);
+    border-bottom: 10px solid rgb(226, 178, 178);
     margin:auto;
 
+    transition: background-color .5s;
 }
-.btn-cap:hover {
+.btn:hover {
     /* background-color: rgb(227, 158, 158); */
     /* color: rgb(227, 158, 158); */
     border-bottom: 20px solid rgb(227, 158, 158);
@@ -152,17 +157,6 @@ header {
         radial-gradient(#ffe3e3 20%, transparent 20%);
     }
     
-    /* .btn-cover {
-        font-size: 50%;
-        color:rgb(255, 255, 255);
-        height:10px;
-        background-color: rgb(196, 154, 154);
-        margin:0 -10px 10px -10px;
-        padding:0;
-        
-        align-self: center;
-        text-align: center;
-    } */
 
     #messages {
         
