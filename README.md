@@ -66,16 +66,18 @@ https://fukuno.jig.jp/app/IchigoJam/#10%20%3F%22MJ%20GETS%20mixjuice-chat.heroku
 
 TwitterのDMでも構いません。
 
-https://twitter.com/shihan_hanadojo
+https://twitter.com/shoichi1031da
 
 ## バージョン
 <ur>
-<li>1.0.0 2022.7.18　初公開</li>
-<li>1.1.0 2022.7.19　IchigoJam絵文字対応</li>
-<li>2.0.0 2022.7.20　CSSグレードアップ,icon機能追加</li>
-<li>2.1.0 2022.7.21　レスポンシブ微対応,redirect→res機能に変更</li>
-<li>2.1.1 2022.7.22　全画面表示機能追加,CORS対応</li>
+<li>1.0.0 (2022.7.18) | 初公開</li>
+<li>1.1.0 (2022.7.19) | IchigoJam絵文字対応</li>
+<li>2.0.0 (2022.7.20) | CSSグレードアップ,icon機能追加</li>
+<li>2.1.0 (2022.7.21) | レスポンシブ微対応,redirect→res機能に変更</li>
+<li>2.1.1 (2022.7.22) | 全画面表示機能追加,CORS対応</li>
+<li>2.1.2 (2022.7.23) | ogp,favicon追加</li>
 </ur>
+
 
 ＜今後対応予定＞
 
