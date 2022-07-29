@@ -2,6 +2,6 @@
 10 CLS:VIDEO3
 20 POKE#1003,1,34:INPUT "msg",M
 30 FOR I=0 TO LEN(M):POKE#D00+I,ASC(M+I):NEXT
-40 ?"MJ GETS mixjuice-chat.herokuapp.com/?redirect=on&icon=";CHR$(236);"&msg=";STR$(M)
+40 ?"MJ GETS mixjuice-chat.herokuapp.com/?res=off&icon=";CHR$(236);"&msg=";STR$(M)
 50 CLS:?">";STR$(#D00):?
 60 GOTO20
