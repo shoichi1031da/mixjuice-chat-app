@@ -11,7 +11,7 @@ const container = document.getElementById('container');
 
 //気持ちレスポンシブに。後日対応予定
   let src_w = document.getElementById('src').clientWidth;
-    console.log("src_w " + src_w);
+    // console.log("src_w " + src_w);
   link.textContent = "アプリの使い方 | src on GitHub";
   if(src_w > 393){
     notes.style.flexWrap = "none";
@@ -28,10 +28,10 @@ const container = document.getElementById('container');
 //チャットコンテナの高さ調整
   let footer_h = document.getElementById('footer').clientHeight;
   let window_h = window.innerHeight
-    console.log("window height: " + window_h);
-    console.log("container offsetTop: " + container.offsetTop);
+    // console.log("window height: " + window_h);
+    // console.log("container offsetTop: " + container.offsetTop);
   let adjustHeight = (window_h - container.offsetTop - footer_h - 17) + "px";
-    console.log("adjustHeight: " + adjustHeight);
+    // console.log("adjustHeight: " + adjustHeight);
   container.style.height = adjustHeight;
 
 
@@ -74,8 +74,8 @@ let socket = io();
 socket.on("chat message", (MSG,ICON) => {
   let icon, msg = "";
   let li = document.createElement("li"); 
-  if(ICON) icon = ICON.substr(0,2);
-  icon = '<div id="icon">' + escapeHtml(icon) + '</div>' ;
+  ICON = ICON.substr(0,2);
+  icon = '<div id="icon">' + escapeHtml(ICON) + '</div>' ;
   msg = '<span id="message">' + escapeHtml(MSG) + '</span>';
   li.innerHTML = icon + msg;
   messages.appendChild(li);
