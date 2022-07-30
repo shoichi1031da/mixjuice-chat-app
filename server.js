@@ -30,7 +30,7 @@ app.get("/",(req,res) => {
     
     //パラメーターからiconの文字列を受け取る
     let ICON = req.query.icon;
-    if(!ICON)ICON = "";
+    if(!ICON)ICON = "🍓";
         console.log("パラメータICON:" + ICON);
 
     //iconの文字列を1文字ずつ分割し、文字コードに変換（絵文字対策）

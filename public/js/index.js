@@ -75,14 +75,10 @@ socket.on("chat message", (MSG,ICON) => {
   let icon, msg = "";
   let li = document.createElement("li"); 
   if(ICON) icon = ICON.substr(0,2);
-  if(!icon) icon = "🍓";
   icon = '<div id="icon">' + escapeHtml(icon) + '</div>' ;
   msg = '<span id="message">' + escapeHtml(MSG) + '</span>';
-  // let time = '<span id="time">' + nowDate() + '</span> '
-
-  console.log("icon",icon,"msg",msg);
-    li.innerHTML = icon + msg;
-    messages.appendChild(li);
+  li.innerHTML = icon + msg;
+  messages.appendChild(li);
 
     
   //自動スクロール
