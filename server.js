@@ -1,14 +1,13 @@
 
 const express = require("express");
 const app = express();
-const fs = require('fs');
 const http = require("http");
-const { receiveMessageOnPort } = require("worker_threads");
+
 const server = http.createServer(app);
 const io = require("socket.io")(server);
 
 const PORT = process.env.PORT || 3000;
-const IchigoJamEncoder = require("./public/js/IchigoJamEncoder");
+const IchigoJamDecoder = require("./public/js/IchigoJamDecoder");
 
 //IchigoJam webでのCORSのヘッダー設定
 const cors = require('cors');
@@ -20,11 +19,10 @@ app.use(
 //publicディレクトリ内のファイルをロードできるようになる
 app.use(express.static('public'));
 
-let iconUri = "";
-let msgUri = "";
 
+//ブラウザもしくはIchigoJamからのGETリクエストに対する処理
 app.get("/",(req,res) => {
-    app.set("encodedStr","");
+    app.set("decodedData","");
     let cliantType = req.headers["user-agent"];
         console.log("\n クライアントタイプ:" + cliantType);
     
@@ -32,49 +30,58 @@ app.get("/",(req,res) => {
     let origin = req.headers.origin;
         console.log("origin:" + origin);
     
-    let icon = req.query.icon;
-        console.log("icon:" + icon);
-    if(icon) {
-        iconUri = encodeURI(icon);
-        console.log(" iconエンコード:" + iconUri);
-    }
-    let recMsg = req.query.msg;
-        console.log(" エンコード前:" + recMsg);
-    msgUri = encodeURI(recMsg); 
-        console.log(" エンコード後:" + msgUri);
+    //パラメーターからiconの文字列を受け取る
+    let ICON = req.query.icon;
+    if(!ICON)ICON = "";
+        console.log("パラメータICON:" + ICON);
 
-    //パラメータで受け取った文字列をエンコード
-    if(recMsg){
-        if(!icon)icon = "";
-        const encodedStr = IchigoJamEncoder(recMsg,msgUri,icon,iconUri);
-        
-        //クライアントがMixJuice実機かIchigoJam webの時
-        if(cliantType.substr(0,8) == "MixJuice" || origin == "https://fukuno.jig.jp"){
-            io.emit("chat message", encodedStr.msg,encodedStr.icon);
-                console.log(" ブラウザ表示:" + encodedStr.msg);
-                console.log(" アイコン表示:" + encodedStr.icon);
-        }else{
-            app.set("encodedStr",encodedStr);
-        }
+    //iconの文字列を1文字ずつ分割し、文字コードに変換（絵文字対策）
+    let ICONcharaCode = [];
+    for(let i = 0; i < ICON.length; i++){
+        ICONcharaCode.push(ICON.charCodeAt(i));
     }
 
+    //パラメーターからmsgの文字列を受け取る
+    let MSG = req.query.msg;
+    if(!MSG)MSG = "Hello Mixchat!";
+        console.log("パラメータMSG:" + MSG);
+
+    //msgの文字列を1文字ずつ分割し、文字コードに変換（絵文字対策）
+    let MSGcharaCode = [];
+    for(let i = 0; i < MSG.length; i++){
+        MSGcharaCode.push(MSG.charCodeAt(i));
+    }
+    
+    //最終的にブラウザに表示するためにデコード
+    let decodedData = IchigoJamDecoder(ICONcharaCode,MSGcharaCode);
+    app.set("decodedData",decodedData);
+    
+    //クライアントがMixJuice実機かIchigoJam webの時
+    if(cliantType.substr(0,8) == "MixJuice" || origin == "https://fukuno.jig.jp"){
+        io.emit("chat message", decodedData.MSG,decodedData.ICON);
+        console.log(" アイコン表示:" + decodedData.ICON);
+        console.log(" ブラウザ表示:" + decodedData.MSG);
+    }else{
+        app.set("decodedData",decodedData);
+    }
+    
     //MixJuice側へのHTMLレスポンス拒否機能（空のbodyを送る）
     if(req.query.res == "off"){
-        console.log(" レスポンス:" + req.query.res);
         res.send("");
+        console.log(" レスポンス:" + req.query.res);
     } else {
         res.sendFile(__dirname + "/index.html");
     }
 });
 
-//WebSocketの接続
+//ブラウザとのWebSocketの接続
 io.on("connection", (socket) => {
     console.log("ユーザーが接続しました");
-    let encodedStr = app.get("encodedStr")
-    if(encodedStr){
-        io.emit("chat message",encodedStr.msg,encodedStr.icon);
-        console.log(" ブラウザ表示:" + encodedStr.msg);
-        console.log(" アイコン表示:" + encodedStr.icon);
+    let decodedData = app.get("decodedData");
+    if(decodedData){
+        io.emit("chat message",decodedData.MSG,decodedData.ICON);
+        console.log(" アイコン表示:" + decodedData.ICON);
+        console.log(" ブラウザ表示:" + decodedData.MSG);
     }
 });
 

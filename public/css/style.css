@@ -123,11 +123,10 @@ header {
 
 /* チャットエリア全体 */
 .container {
-    
     resize: both; 
     max-height: 580px;
     overflow: scroll;
-    padding: 0px 8px;
+    padding: 7px 8px;
     margin: 0 10px 0 10px;
     border-radius: 20px;
     box-shadow: 10px 11px 20px 0px rgb(0 0 0 / 40%);
@@ -169,14 +168,14 @@ header {
             background:rgb(244, 220, 220);
             border-radius: 10px;
             display: flex;
-            margin: 0 0 7px 0;
+            margin: 7px 0 7px 0;
             
         }
 
         #messages > li:nth-child(odd) {
             background: rgb(220, 253, 171);
             border-radius:10px;
-            margin: 0 0 7px 0;
+            margin: 7px 0 7px 0;
         } 
 
 
