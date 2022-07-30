@@ -2,12 +2,9 @@
 const express = require("express");
 const app = express();
 const http = require("http");
-
 const server = http.createServer(app);
 const io = require("socket.io")(server);
-
 const PORT = process.env.PORT || 3000;
-const IchigoJamDecoder = require("./public/js/IchigoJamDecoder");
 
 //IchigoJam webでのCORSのヘッダー設定
 const cors = require('cors');
@@ -15,11 +12,12 @@ app.use(
     cors({
         origin: "https://fukuno.jig.jp",
     }));
-
+    
 //publicディレクトリ内のファイルをロードできるようになる
 app.use(express.static('public'));
-
-
+    
+const IchigoJamDecoder = require("./public/js/IchigoJamDecoder");
+    
 //ブラウザもしくはIchigoJamからのGETリクエストに対する処理
 app.get("/",(req,res) => {
     app.set("decodedData","");

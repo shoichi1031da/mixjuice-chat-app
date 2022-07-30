@@ -41,7 +41,6 @@ const IchigoJamDecoder = (iconCharaCode,msgCharaCode) => {
         } 
     }
 
-    console.log(decodedICON,decodedMSG);
     const decodedData = {
         ICON: decodedICON,
         MSG: decodedMSG
