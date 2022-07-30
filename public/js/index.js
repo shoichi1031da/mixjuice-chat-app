@@ -30,7 +30,7 @@ const container = document.getElementById('container');
   let window_h = window.innerHeight
     console.log("window height: " + window_h);
     console.log("container offsetTop: " + container.offsetTop);
-  let adjustHeight = (window_h - container.offsetTop - footer_h) + "px";
+  let adjustHeight = (window_h - container.offsetTop - footer_h - 17) + "px";
     console.log("adjustHeight: " + adjustHeight);
   container.style.height = adjustHeight;
 
@@ -60,22 +60,28 @@ btnState = !btnState;
 //   return hour + ":" + minite; 
 // }
 
+ const escapeHtml = (str) => {
+  str = str.replace(/&/g, '&amp;');
+  str = str.replace(/</g, '&lt;');
+  str = str.replace(/>/g, '&gt;');
+  str = str.replace(/"/g, '&quot;');
+  str = str.replace(/'/g, '&#39;');
+  return str;
+}
+
 //全クライアントのブラウザに表示
 let socket = io();
 socket.on("chat message", (MSG,ICON) => {
-  let icon = "";
-  // let div = document.createElement("div");
+  let icon, msg = "";
   let li = document.createElement("li"); 
-  // li.id = "msg";
   if(ICON) icon = ICON.substr(0,2);
   if(!icon) icon = "🍓";
-  icon = '<div id="icon">' + icon + '</div>' ;
+  icon = '<div id="icon">' + escapeHtml(icon) + '</div>' ;
+  msg = '<span id="message">' + escapeHtml(MSG) + '</span>';
   // let time = '<span id="time">' + nowDate() + '</span> '
-  let message = '<span id="message">' + MSG + '</span>';
 
-    // div.innerHTML = icon;
-    li.innerHTML = icon + message;
-    // messages.appendChild(div);
+  console.log("icon",icon,"msg",msg);
+    li.innerHTML = icon + msg;
     messages.appendChild(li);
 
     
