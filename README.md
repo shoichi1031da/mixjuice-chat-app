@@ -53,6 +53,7 @@ MixJuice、IchigoJam実機の場合は、スペースをパラメータに使わ
 ## 使用例3)IchigoJam Webの仮想MixJuice機能の場合
 https://fukuno.jig.jp/app/IchigoJam/
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/ichigojam_web.png" alt="IchigoJamwebリンク" title="ichigojam_web">
+
 Mixchat!上部にあるプログラムをクリックすると、そのプログラムを読み込んだIchigoJamwebにアクセスできます。
 
 「I/O」ボタンをクリックし、「MixJuice」のチェックボックスにチェックを入れるとMixJuice機能が使えます。
