@@ -1,6 +1,8 @@
 # MixJuice専用チャットアプリ "Mixchat!"
-### https://mixjuice-chat.herokuapp.com/
+### https://ichigojam.top/chat/
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/main.png" alt="メイン" title="main">
+
+(画像のURLhはherokuですが、ichigojam/chat/に変更しました / 2022.9.15)
 
 GETメソッドのパラメータmsgにメッセージを入力しリクエストを送るとブラウザに表示され、チャットができます。
 
@@ -14,7 +16,7 @@ https://twitter.com/shoichi1031da/status/1553495662360408064
 ## 使用例1)ブラウザの場合
 アドレスバーにmsgパラメータ付きで入力しアクセスするとメッセージを送ることができます。
 
-https://mixjuice-chat.herokuapp.com/?msg=アドレスバーにメッセージを入力
+https://ichigojam.top/chat/?msg=アドレスバーにメッセージを入力
 
 ### ブラウザ機能)イチゴマークをクリックすると全画面表示に切り替わります。
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/default_screen.png" alt="メッセージ" title="msg">
@@ -25,7 +27,7 @@ https://mixjuice-chat.herokuapp.com/?msg=アドレスバーにメッセージを
 もう一度イチゴマークを押すとリロードされ初期画面に戻ります。
 
 ## 使用例2)MixJuice、IchigoJam実機の場合
-?"MJ GETS mixjuice-chat.herokuapp.com/?msg=メッセージ"
+?"MJ GETS ichigojam.top/chat/?msg=メッセージ"
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/sample1_msg.png" alt="メッセージ" title="msg">
 
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/sample0.png" alt="初期画面" title="initial screen">
@@ -35,12 +37,12 @@ https://mixjuice-chat.herokuapp.com/?msg=アドレスバーにメッセージを
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/sample1_msg_result.png" alt="メッセージ結果" title="msg_result">
 
 ### 追加機能1）MixJuice側でGETリクエストを拒否できます。resパラメーターを追加します。
-?"MJ GETS mixjuice-chat.herokuapp.com/?msg=メッセージ&res=off"
+?"MJ GETS ichigojam.top/chat/?msg=メッセージ&res=off"
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/sample2_res.png" alt="リダイレクト" title="redirect">
 
 ### 追加機能2)アイコンに使用する文字をiconパラメーターで指定できます（デフォルトは🍓）。アルファベットなら2文字まで指定できます。
 
-?"MJ GETS mixjuice-chat.herokuapp.com/?msg=メッセージ&icon=キャラ"
+?"MJ GETS ichigojam.top/chat/?msg=メッセージ&icon=キャラ"
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/sample3_icon.png" alt="アイコン" title="icon">
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/sample3_icon_result.png" alt="アイコン結果" title="icon_result">
 
@@ -57,7 +59,7 @@ Mixchat!上部にあるプログラムをクリックすると、そのプログ
 
 使い方は使用例2)と同じです。
 
-https://fukuno.jig.jp/app/IchigoJam/#10%20%3F%22MJ%20GETS%20mixjuice-chat.herokuapp.com%2F%3Fmsg%3DIchigoJamWeb%22%0A
+https://fukuno.jig.jp/app/IchigoJam/#10%20%3F%22MJ%20GETS%20ichigojam.top/chat/%2F%3Fmsg%3DIchigoJamWeb%22%0A
 
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/sample4_ichigojamweb.png" alt="IchigoJamweb" title="ichigojamweb">
 ※IchigoJam Webの場合はスペースをパラメータに使うことができます。
@@ -69,7 +71,7 @@ https://fukuno.jig.jp/app/IchigoJam/#10%20%3F%22MJ%20GETS%20mixjuice-chat.heroku
 
 TwitterのDMでも構いません。
 
-https://twitter.com/shoichi1031da
+https://twitter.com/IchigoJam_info
 
 ## バージョン
 <ur>
@@ -80,6 +82,7 @@ https://twitter.com/shoichi1031da
 <li>2.1.1 (2022.7.22) | 全画面表示機能追加,CORS対応</li>
 <li>2.1.2 (2022.7.23) | ogp,favicon追加</li>
 <li>2.1.3 (2022.7.31) | 絵文字、カタカナの文字化け修正</li>
+<li>2.2.0 (2022.9.15) | サーバーをHerokuから独自サーバー（ichigojam.top）に移行
 </ur>
 
 
