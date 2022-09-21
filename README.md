@@ -38,12 +38,11 @@ https://ichigojam.top/chat/?msg=アドレスバーにメッセージを入力
 
 ### 追加機能1）MixJuice側でGETリクエストを拒否できます。resパラメーターを追加します。
 ?"MJ GETS ichigojam.top/chat/?msg=メッセージ&res=off"
-<img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/sample2_res.png" alt="リダイレクト" title="redirect">
 
 ### 追加機能2)アイコンに使用する文字をiconパラメーターで指定できます（デフォルトは🍓）。アルファベットなら2文字まで指定できます。
 
 ?"MJ GETS ichigojam.top/chat/?msg=メッセージ&icon=キャラ"
-<img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/sample3_icon.png" alt="アイコン" title="icon">
+
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/sample3_icon_result.png" alt="アイコン結果" title="icon_result">
 
 
