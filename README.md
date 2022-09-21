@@ -2,7 +2,7 @@
 ### https://ichigojam.top/chat/
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/main.png" alt="メイン" title="main">
 
-(画像のURLはherokになっていますが、ichigojam/chat/に変更となりました / 2022.9.15)
+(画像のドメインはherokuapp.comになっていますが、ichigojam.topに変更となりました。2022.9.15)
 
 GETメソッドのパラメータmsgにメッセージを入力しリクエストを送るとブラウザに表示され、チャットができます。
 
