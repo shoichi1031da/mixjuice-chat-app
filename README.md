@@ -28,7 +28,6 @@ https://ichigojam.top/chat/?msg=アドレスバーにメッセージを入力
 
 ## 使用例2)MixJuice、IchigoJam実機の場合
 ?"MJ GETS ichigojam.top/chat/?msg=メッセージ"
-<img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/sample1_msg.png" alt="メッセージ" title="msg">
 
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/sample0.png" alt="初期画面" title="initial screen">
 
