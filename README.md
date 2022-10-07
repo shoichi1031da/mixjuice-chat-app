@@ -11,7 +11,7 @@ IchigoJamのカタカナや絵文字にも対応しています。
 IchigoJamでのネットワーク講座などでご利用ください。
 
 ## ■デモ動画
-https://twitter.com/shoichi1031da/status/1553495662360408064
+https://youtu.be/nBOENHCKCFM
 
 ## 使用例1)ブラウザの場合
 アドレスバーにmsgパラメータ付きで入力しアクセスするとメッセージを送ることができます。
@@ -35,15 +35,17 @@ https://ichigojam.top/chat/?msg=アドレスバーにメッセージを入力
 
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/sample1_msg_result.png" alt="メッセージ結果" title="msg_result">
 
-### 追加機能1）MixJuice側でGETリクエストを拒否できます。resパラメーターを追加します。
-?"MJ GETS ichigojam.top/chat/?msg=メッセージ&res=off"
 
-### 追加機能2)アイコンに使用する文字をiconパラメーターで指定できます（デフォルトは🍓）。アルファベットなら2文字まで指定できます。
+### 追加機能1)アイコンの設定（パラメータ）
+アイコンに使用する文字をiconパラメーターで指定できます（デフォルトは🍓）。アルファベットなら2文字まで指定できます。
 
 ?"MJ GETS ichigojam.top/chat/?msg=メッセージ&icon=キャラ"
 
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/sample3_icon_result.png" alt="アイコン結果" title="icon_result">
 
+### 追加機能2)チャット内容の取得（パス）
+Webアプリ上に
+?"MJ GETS ichigojam.top/chat/contents"
 
 ### ※注意※ パラメーターにスペースは使えません。
 MixJuice、IchigoJam実機の場合は、スペースをパラメータに使わないでください。
