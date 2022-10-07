@@ -36,15 +36,16 @@ https://ichigojam.top/chat/?msg=アドレスバーにメッセージを入力
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/sample1_msg_result.png" alt="メッセージ結果" title="msg_result">
 
 
-### 追加機能1)アイコンの設定（パラメータ）
+### 追加機能1)アイコンの設定 / パラメータ追加
 アイコンに使用する文字をiconパラメーターで指定できます（デフォルトは🍓）。アルファベットなら2文字まで指定できます。
 
 ?"MJ GETS ichigojam.top/chat/?msg=メッセージ&icon=キャラ"
 
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/sample3_icon_result.png" alt="アイコン結果" title="icon_result">
 
-### 追加機能2)チャット内容の取得（パス）
-Webアプリ上に
+### 追加機能2)チャット内容の取得 / パス追加
+パスに「/contents」を追加すると、Webアプリ上に表示されているチャット内容をIchigoJamで読み込むことができます。
+
 ?"MJ GETS ichigojam.top/chat/contents"
 
 ### ※注意※ パラメーターにスペースは使えません。
@@ -84,7 +85,8 @@ https://twitter.com/IchigoJam_info
 <li>2.1.1 (2022.7.22) | 全画面表示機能追加,CORS対応</li>
 <li>2.1.2 (2022.7.23) | ogp,favicon追加</li>
 <li>2.1.3 (2022.7.31) | 絵文字、カタカナの文字化け修正</li>
-<li>2.2.0 (2022.9.15) | サーバーをHerokuから独自サーバー（ichigojam.top）に移行
+<li>2.2.0 (2022.9.15) | サーバーをHerokuから独自サーバー（ichigojam.top）に移行</li>
+<li>2.2.1 (2022.10.7) | チャット内容の取得機能追加（追加機能2参照）</li>
 </ur>
 
 
