@@ -35,6 +35,15 @@ https://ichigojam.top/chat/?msg=アドレスバーにメッセージを入力
 
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/sample1_msg_result.png" alt="メッセージ結果" title="msg_result">
 
+### IchigoJam側のサンプルコード
+■GitHub
+
+https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/ichigojam_sample_code.txt
+
+■IchigoDrop（MixJuiceで取得可能コード）
+
+https://ichigojam.top/drop/codes?id=chat
+
 
 ### 追加機能1)アイコンの設定 / パラメータ追加
 アイコンに使用する文字をiconパラメーターで指定できます（デフォルトは🍓）。アルファベットなら2文字まで指定できます。
