@@ -76,6 +76,17 @@ https://fukuno.jig.jp/app/IchigoJam/#10%20%3F%22MJ%20GETS%20ichigojam.top/chat/%
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/sample4_ichigojamweb.png" alt="IchigoJamweb" title="ichigojamweb">
 ※IchigoJam Webの場合はスペースをパラメータに使うことができます。
 
+## ルーム作成（ver3.0.0）
+ルームを作成してルームIDをパスに追加することで、ルームIDを知っている人だけでチャットが可能になりました（2022年12月1日）。
+
+例） ルームIDを「test」で作成した場合
+
+?"MJ GETS ichigojam.top/chat/test/?msg=メッセージ"
+
+「/test」をURLの最後に追加することで、ルーム専用のページが開きます。
+
+https://ichigojam.top/chat/test
+
 ## その他
 このアプリは自分のスキルアップを目的に作成していることもあり、プルリクエストがあってもマージすることはないと思います。
 
@@ -95,7 +106,8 @@ https://twitter.com/IchigoJam_info
 <li>2.1.2 (2022.7.23) | ogp,favicon追加</li>
 <li>2.1.3 (2022.7.31) | 絵文字、カタカナの文字化け修正</li>
 <li>2.2.0 (2022.9.15) | サーバーをHerokuから独自サーバー（ichigojam.top）に移行</li>
-<li>2.2.1 (2022.10.7) | チャット内容の取得機能追加（追加機能2参照）</li>
+<li>2.3.0 (2022.10.7) | チャット内容の取得機能追加（追加機能2参照）</li>
+<li>3.0.0 (2022.12.1) | ルーム作成機能追加
 </ur>
 
 
