@@ -77,7 +77,9 @@ https://fukuno.jig.jp/app/IchigoJam/#10%20%3F%22MJ%20GETS%20ichigojam.top/chat/%
 ※IchigoJam Webの場合はスペースをパラメータに使うことができます。
 
 ## CreateRoom
-チャットルームを作成してルームIDをパスに、パスワードをパラメータに追加することで、ルームIDを知っている人だけでチャットが可能になりました（2022年12月1日）。
+ルームIDとパスワードを知っている人だけでチャットが可能になりました（2022年12月1日）。
+
+チャットルームを作成してルームIDをパスに、パスワードをパラメータpwに追加することでアクセスできます。
 
 ### 例） ルームIDを「test」、パスワードを「1234」で作成した場合
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/room.png" alt="メイン" title="main">
