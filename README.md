@@ -76,16 +76,18 @@ https://fukuno.jig.jp/app/IchigoJam/#10%20%3F%22MJ%20GETS%20ichigojam.top/chat/%
 <img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/sample4_ichigojamweb.png" alt="IchigoJamweb" title="ichigojamweb">
 ※IchigoJam Webの場合はスペースをパラメータに使うことができます。
 
-## ルーム作成（ver3.0.0）
-ルームを作成してルームIDをパスに追加することで、ルームIDを知っている人だけでチャットが可能になりました（2022年12月1日）。
+## チャットルーム作成（ver3.0.0）
+ルームを作成してルームIDをパスに、パスワードをパラメータに追加することで、ルームIDを知っている人だけでチャットが可能になりました（2022年12月1日）。
 
-例） ルームIDを「test」で作成した場合
+<img src="https://github.com/shoichi1031da/mixjuice-chat-app/blob/main/document/room.png" alt="メイン" title="main">
 
-?"MJ GETS ichigojam.top/chat/test/?msg=メッセージ"
+例） ルームIDを「test」、パスワードを「1234」で作成した場合
+
+?"MJ GETS ichigojam.top/chat/test/?pw=1234&msg=メッセージ"
 
 「/test」をURLの最後に追加することで、ルーム専用のページが開きます。
 
-https://ichigojam.top/chat/test
+https://ichigojam.top/chat/test?pw=1234
 
 ## その他
 このアプリは自分のスキルアップを目的に作成していることもあり、プルリクエストがあってもマージすることはないと思います。
