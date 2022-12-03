@@ -83,9 +83,9 @@ https://fukuno.jig.jp/app/IchigoJam/#10%20%3F%22MJ%20GETS%20ichigojam.top/chat/%
 
 例） ルームIDを「test」、パスワードを「1234」で作成した場合
 
-?"MJ GETS ichigojam.top/chat/test/?pw=1234&msg=メッセージ"
+<a href="https://fukuno.jig.jp/app/IchigoJam/#10%20%3F%22MJ%20GETS%20ichigojam.top%2Fchat%2Ftest%3Fpw%3D1234%22%0A">?"MJ GETS ichigojam.top/chat/test/?pw=1234&msg=メッセージ"</a>
 
-「/test」をURLの最後に追加することで、ルーム専用のページが開きます。
+「/test?pw=1234」をURLの最後に追加することで、ルーム専用のページが開きます。
 
 https://ichigojam.top/chat/test?pw=1234
 
